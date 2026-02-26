@@ -102,7 +102,8 @@
 					<a
 						:href="constructLocaleWithLocaleSegment(locale, '/news/')"
 						class="btn btn-primary"
-						>Read Our News</a
+					>
+						Read Our News</a
 					>
 				</div>
 			</div>
@@ -115,7 +116,7 @@ import FeatureCard from "../components/FeatureCard.vue";
 import VideoSection from "../components/VideoSection.vue";
 import TeamMemberCard from "../components/TeamMemberCard.vue";
 import ThemeToggle from "../components/ThemeToggle.vue";
-import { FEATURE_CARDS, TEAM_MEMBERS, STATS } from "../en/home-data";
+import { FEATURE_CARDS, TEAM_MEMBERS, STATS } from "./home-data";
 import { constructLocaleWithLocaleSegment } from "../utils/pathHelper";
 import StatItem from "../components/StatItem.vue";
 // @ts-expect-error - svg import

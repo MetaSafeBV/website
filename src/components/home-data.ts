@@ -1,8 +1,4 @@
-import {
-	FeatureCardProps,
-	StatItemProps,
-	TeamMemberCardProps,
-} from "../components/types";
+import { FeatureCardProps, StatItemProps, TeamMemberCardProps } from "./types";
 
 export const FEATURE_CARDS = [
 	{
