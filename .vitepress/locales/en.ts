@@ -28,10 +28,10 @@ function nav(): DefaultTheme.NavItem[] {
 
 function sidebar(): DefaultTheme.SidebarItem[] {
 	return generateSidebar({
-		locale: "",
-		srcDir: "src/en",
+		locale: "en",
+		srcDir: "src",
 		collapsed: true,
-		ignoreList: ["Home.vue"],
+		ignoreList: ["Home.vue", "home-data.ts"],
 		useFrontmatterTitle: true,
 	});
 }
