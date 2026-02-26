@@ -1,26 +1,37 @@
 import { defineConfig } from "vitepress";
+import { en } from "./locales/en";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-	srcDir: "docs",
-	lang: "en-US",
-	title: "Metamaterial Works",
-	themeConfig: {
-		// https://vitepress.dev/reference/default-theme-config
-		logo: "/logo.svg",
-		nav: [
-			{ text: "Home", link: "/" },
-			{ text: "Examples", link: "/markdown-examples" },
-		],
-
-		sidebar: [
+	srcDir: "./src",
+	cleanUrls: true,
+	metaChunk: true,
+	lastUpdated: true,
+	outDir: ".vitepress/dist",
+	base: process.env["VP_BASE"] || "/",
+	head: [
+		["link", { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
+		// Note: remove font-awesome if not used in the project to reduce bundle size
+		// question to Bernard
+		[
+			"link",
 			{
-				text: "Examples",
-				items: [
-					{ text: "Markdown Examples", link: "/markdown-examples" },
-					{ text: "Runtime API Examples", link: "/api-examples" },
-				],
+				rel: "stylesheet",
+				href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css",
 			},
 		],
+	],
+	themeConfig: {
+		logo: "/assets/svg/logo.svg",
+		search: {
+			provider: "local",
+		},
+	},
+	locales: {
+		root: {
+			label: "English",
+			lang: "en-US",
+			...en,
+		},
 	},
 });
