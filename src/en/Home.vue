@@ -120,12 +120,11 @@ import { constructLocaleWithLocaleSegment } from "../utils/pathHelper";
 import StatItem from "../components/StatItem.vue";
 // @ts-expect-error - svg import
 import logoSrc from "../assets/svg/logo.svg";
+// @ts-expect-error - svg import
+import videoSrc from "../assets/video/AMSIA.mp4";
 
 // Note(Bence): Update this when multiple locales are supported
 const currentLocale = "en";
-
-const videoSrc =
-	"https://onedrive.live.com/?qt=allmyphotos&photosData=%2Fshare%2FF24DF824A0E46F63%21se68f073d8d5a4110ac629eed3971b919%3Fithint%3Dvideo%26migratedtospo%3Dtrue&cid=F24DF824A0E46F63&id=F24DF824A0E46F63%21se68f073d8d5a4110ac629eed3971b919&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3YvYy9mMjRkZjgyNGEwZTQ2ZjYzL0lRQTlCNF9tV28wUVFheGludTA1Y2JrWkFWSE9GSDh6SzN4Vm9zcFJnNDd0Z2Fz&v=photos";
 </script>
 
 <style scoped>
