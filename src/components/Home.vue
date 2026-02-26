@@ -14,13 +14,13 @@
 				</p>
 				<div class="hero-actions">
 					<a
-						:href="constructLocaleWithLocaleSegment(currentLocale, '/product/')"
+						:href="constructLocaleWithLocaleSegment(locale, '/product/')"
 						class="btn btn-primary"
 					>
 						Product
 					</a>
 					<a
-						:href="constructLocaleWithLocaleSegment(currentLocale, '/about/')"
+						:href="constructLocaleWithLocaleSegment(locale, '/about/')"
 						class="btn btn-secondary"
 					>
 						About Us
@@ -83,7 +83,7 @@
 				</div>
 				<div class="team-actions">
 					<a
-						:href="constructLocaleWithLocaleSegment(currentLocale, '/team/')"
+						:href="constructLocaleWithLocaleSegment(locale, '/team/')"
 						class="btn btn-primary btn-lg"
 					>
 						Meet the Team
@@ -100,7 +100,7 @@
 						eiusmod tempor incididunt ut labore.
 					</p>
 					<a
-						:href="constructLocaleWithLocaleSegment(currentLocale, '/news/')"
+						:href="constructLocaleWithLocaleSegment(locale, '/news/')"
 						class="btn btn-primary"
 						>Read Our News</a
 					>
@@ -115,7 +115,7 @@ import FeatureCard from "../components/FeatureCard.vue";
 import VideoSection from "../components/VideoSection.vue";
 import TeamMemberCard from "../components/TeamMemberCard.vue";
 import ThemeToggle from "../components/ThemeToggle.vue";
-import { FEATURE_CARDS, TEAM_MEMBERS, STATS } from "./home-data";
+import { FEATURE_CARDS, TEAM_MEMBERS, STATS } from "../en/home-data";
 import { constructLocaleWithLocaleSegment } from "../utils/pathHelper";
 import StatItem from "../components/StatItem.vue";
 // @ts-expect-error - svg import
@@ -123,8 +123,14 @@ import logoSrc from "../assets/svg/logo.svg";
 // @ts-expect-error - svg import
 import videoSrc from "../assets/video/AMSIA.mp4";
 
-// Note(Bence): Update this when multiple locales are supported
-const currentLocale = "en";
+const props = withDefaults(
+	defineProps<{
+		locale?: string;
+	}>(),
+	{
+		locale: "en",
+	},
+);
 </script>
 
 <style scoped>
