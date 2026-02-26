@@ -1,7 +1,7 @@
 <template>
 	<div class="home">
 		<ThemeToggle />
-		<div class="hero">
+		<section class="hero">
 			<div class="container">
 				<img :src="logoSrc" alt="Logo" class="hero-logo" />
 				<h1 class="hero-title">
@@ -27,8 +27,8 @@
 					</a>
 				</div>
 			</div>
-		</div>
-		<div class="section video-highlight">
+		</section>
+		<section class="section video-highlight">
 			<div class="container">
 				<h2 class="section-title">Lorem Ipsum Video</h2>
 				<p class="section-subtitle">
@@ -36,8 +36,8 @@
 				</p>
 				<VideoSection :videoUrl="videoSrc" />
 			</div>
-		</div>
-		<div class="section features">
+		</section>
+		<section class="section features">
 			<div class="container">
 				<h2 class="section-title">Lorem Ipsum Dolor</h2>
 				<div class="features-grid">
@@ -51,8 +51,8 @@
 					/>
 				</div>
 			</div>
-		</div>
-		<div class="section stats">
+		</section>
+		<section class="section stats">
 			<div class="container">
 				<div class="stats-grid">
 					<StatItem
@@ -63,8 +63,8 @@
 					/>
 				</div>
 			</div>
-		</div>
-		<div class="section team-section">
+		</section>
+		<section class="section team-section">
 			<div class="container">
 				<h2 class="section-title">Lorem Ipsum Team</h2>
 				<p class="section-subtitle">
@@ -90,8 +90,8 @@
 					</a>
 				</div>
 			</div>
-		</div>
-		<div class="section news-section">
+		</section>
+		<section class="section news-section">
 			<div class="container">
 				<div class="news-content">
 					<h2 class="news-title">Want to Know More?</h2>
@@ -106,7 +106,7 @@
 					>
 				</div>
 			</div>
-		</div>
+		</section>
 	</div>
 </template>
 
@@ -168,6 +168,7 @@ const videoSrc =
 .container {
 	display: flex;
 	padding: 0 2rem;
+	margin: 0 auto;
 	max-width: 1200px;
 	align-items: center;
 	flex-direction: column;
@@ -312,6 +313,7 @@ const videoSrc =
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	gap: 3rem;
+	width: 100%;
 	text-align: center;
 }
 

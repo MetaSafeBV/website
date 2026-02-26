@@ -7,28 +7,6 @@ import { onMounted, watch } from "vue";
 
 import "./css/style.css";
 import "./css/colors.css";
-/**
- * Add global styles to override VitePress defaults for home page
- */
-if (typeof document !== "undefined") {
-	const style = document.createElement("style");
-	style.textContent = `
-		.vp-doc.container {
-			max-width: none;
-			padding: 0;
-		}
-
-		.VPContent.is-home .vp-doc {
-			max-width: none;
-			padding: 0;
-		}
-
-		.VPHome {
-			margin-bottom: 0 !important;
-		}
-	`;
-	document.head.appendChild(style);
-}
 
 export default {
 	extends: DefaultTheme,

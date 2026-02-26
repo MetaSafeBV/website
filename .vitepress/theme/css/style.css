@@ -128,3 +128,20 @@
 	--vp-custom-block-tip-bg: var(--vp-c-brand-soft);
 	--vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
 }
+
+/**
+ * Home page overrides - remove VitePress container constraints
+ */
+.VPContent.is-home .vp-doc.container {
+	max-width: none !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.VPContent.is-home .VPHome {
+	margin-bottom: 0 !important;
+}
+
+.VPContent.is-home .content-container {
+	max-width: none !important;
+}
