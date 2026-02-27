@@ -29,16 +29,19 @@
 		</section>
 		<section class="section video-highlight">
 			<div class="container">
-				<h2 class="section-title">Lorem Ipsum Video</h2>
+				<h2 class="section-title">Understanding MetaSafe</h2>
 				<p class="section-subtitle">
-					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+					The science and technology behind MetaSafe's advanced protection solutions.
 				</p>
 				<VideoSection :videoUrl="videoSrc" />
 			</div>
 		</section>
 		<section class="section features">
 			<div class="container">
-				<h2 class="section-title">Lorem Ipsum Dolor</h2>
+				<h2 class="section-title">Key Features</h2>
+				<p class="section-subtitle">
+					Discover the innovative features that make MetaSafe's protection solutions stand out.
+				</p>
 				<div class="features-grid">
 					<FeatureCard
 						v-for="props in FEATURE_CARDS"
@@ -65,27 +68,30 @@
 		</section>
 		<section class="section team-section">
 			<div class="container">
-				<h2 class="section-title">Lorem Ipsum Team</h2>
+				<h2 class="section-title">Leadership</h2>
 				<p class="section-subtitle">
-					Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+					MetaSafe is led by experienced co-founders combining academic research excellence with industrial expertise
 				</p>
-				<div class="team-grid">
-					<TeamMemberCard
-						v-for="props in TEAM_MEMBERS"
-						:key="props.name"
-						:name="props.name"
-						:role="props.role"
-						:image="props.image"
-						:description="props.description"
-						:social="props.social"
-					/>
+				<div class="leadership-grid">
+					<div class="leadership-card">
+						<img src="/assets/team/Bernard_C12_0740_head.jpg" alt="Bernard" class="leadership-photo" />
+						<h3>Bernard Ennis</h3>
+						<p class="leadership-role">Co-Founder & CEO</p>
+						<p class="leadership-expertise">30+ years industrial experience in Automotive, Marine and Electrical sectors</p>
+					</div>
+					<div class="leadership-card">
+						<img src="/assets/team/Corentin_C12_0783_profile.jpg" alt="Corentin" class="leadership-photo" />  
+						<h3>Corentin Coulais</h3>
+						<p class="leadership-role">Co-Founder & CSO</p>
+						<p class="leadership-expertise">Associate Professor, University of Amsterdam</p>
+					</div>
 				</div>
 				<div class="team-actions">
 					<a
 						:href="constructLocaleWithLocaleSegment(locale, '/team/')"
 						class="btn btn-primary btn-lg"
 					>
-						Meet the Team
+						Meet the Full Team
 					</a>
 				</div>
 			</div>
@@ -113,13 +119,12 @@
 <script setup lang="ts">
 import FeatureCard from "../components/FeatureCard.vue";
 import VideoSection from "../components/VideoSection.vue";
-import TeamMemberCard from "../components/TeamMemberCard.vue";
 import ThemeToggle from "../components/ThemeToggle.vue";
-import { FEATURE_CARDS, TEAM_MEMBERS, STATS } from "./home-data";
+import { FEATURE_CARDS, STATS } from "./home-data";
 import { constructLocaleWithLocaleSegment } from "../utils/pathHelper";
 import StatItem from "../components/StatItem.vue";
 // @ts-expect-error - png import
-import logoSrc from "../assets/svg/MetaSafe_logo_3.2.png";
+import logoSrc from "../assets/branding/MetaSafe_logo_3.2.png";
 // @ts-expect-error - svg import
 import videoSrc from "../assets/video/AMSIA.mp4";
 
@@ -334,6 +339,48 @@ const props = withDefaults(
 	margin-top: 3rem;
 }
 
+.leadership-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 3rem;
+	margin-top: 3rem;
+	justify-items: center;
+}
+
+.leadership-card {
+	text-align: center;
+	max-width: 300px;
+}
+
+.leadership-photo {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-bottom: 1rem;
+	border: 3px solid var(--color-primary);
+}
+
+.leadership-card h3 {
+	margin: 0.5rem 0;
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: var(--text-primary);
+}
+
+.leadership-role {
+	color: var(--color-primary);
+	font-weight: 500;
+	margin: 0.5rem 0;
+	font-size: 0.9rem;
+}
+
+.leadership-expertise {
+	color: var(--text-secondary);
+	font-size: 0.85rem;
+	margin: 0;
+}
+
 .team-actions {
 	display: flex;
 	justify-content: center;
@@ -407,6 +454,11 @@ const props = withDefaults(
 	.team-grid {
 		grid-template-columns: 1fr;
 		gap: 1.5rem;
+	}
+
+	.leadership-grid {
+		grid-template-columns: 1fr;
+		gap: 2rem;
 	}
 }
 </style>
