@@ -13,9 +13,6 @@
 		"lint": "oxlint",
 		"lint:fix": "oxlint --fix"
 	},
-	"dependencies": {
-		"dompurify": "^3.3.1"
-	},
 	"devDependencies": {
 		"@cspell/dict-vue": "^3.0.5",
 		"@tsconfig/node24": "^24.0.4",
