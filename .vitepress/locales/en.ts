@@ -1,31 +1,6 @@
 import type { DefaultTheme, LocaleSpecificConfig } from 'vitepress';
 import { generateSidebar } from '../internal/sidebar';
 
-function nav(): DefaultTheme.NavItem[] {
-	return [
-		{
-			text: 'About',
-			link: '/en/about/',
-			activeMatch: '/en/about/',
-		},
-		{
-			text: 'Product',
-			link: '/en/product/',
-			activeMatch: '/en/product/',
-		},
-		{
-			text: 'Team',
-			link: '/en/team/',
-			activeMatch: '/en/team/',
-		},
-		{
-			text: 'News',
-			link: '/en/news/',
-			activeMatch: '/en/news/',
-		},
-	];
-}
-
 function sidebar(): DefaultTheme.SidebarItem[] {
 	const mainItems = generateSidebar({
 		locale: 'en',
