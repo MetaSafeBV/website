@@ -1,6 +1,3 @@
-export function constructLocaleWithLocaleSegment(
-	locale: string,
-	path: string,
-): string {
-	return `/${locale}/${path}`.replaceAll("//", "/");
+export function constructLocaleWithLocaleSegment(locale: string, path: string): string {
+	return `/${locale}/${path}`.replaceAll('//', '/');
 }

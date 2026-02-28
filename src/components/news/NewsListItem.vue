@@ -14,8 +14,8 @@
 </template>
 
 <script setup lang="ts">
-import { NewsItemProps } from "./news";
-import { useRouter } from "vitepress";
+import { NewsItemProps } from './news';
+import { useRouter } from 'vitepress';
 
 const props = defineProps<NewsItemProps>();
 

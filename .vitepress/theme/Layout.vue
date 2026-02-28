@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { inBrowser, useData, useRouter } from "vitepress";
-import DefaultTheme from "vitepress/theme";
-import { watchEffect, onMounted } from "vue";
+import { inBrowser, useData, useRouter } from 'vitepress';
+import DefaultTheme from 'vitepress/theme';
+import { watchEffect, onMounted } from 'vue';
 
 const { lang } = useData();
 const router = useRouter();
@@ -14,8 +14,8 @@ watchEffect(() => {
 
 onMounted(() => {
 	// Redirect from root to /en/
-	if (inBrowser && window.location.pathname === "/") {
-		router.go("/en/");
+	if (inBrowser && window.location.pathname === '/') {
+		router.go('/en/');
 	}
 });
 </script>

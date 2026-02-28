@@ -39,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-import { TeamMemberCardProps } from "./team";
+import { TeamMemberCardProps } from './team';
 
 defineProps<TeamMemberCardProps>();
 </script>

@@ -7,15 +7,16 @@
 		"docs:dev": "vitepress dev",
 		"docs:build": "vitepress build",
 		"docs:preview": "vitepress preview",
-		"lint:spell": "cspell --config ./cspell.yaml \"**/*.{ts,md,json,vue}\" --verbose"
+		"lint:spell": "cspell --config ./cspell.yaml \"**/*.{ts,md,json,vue}\" --verbose",
+		"fmt": "oxfmt",
+		"fmt:check": "oxfmt --check"
 	},
 	"devDependencies": {
 		"@cspell/dict-vue": "^3.0.5",
 		"@tsconfig/node24": "^24.0.4",
 		"@types/node": "^25.3.0",
 		"cspell": "^9.7.0",
-		"fs": "0.0.1-security",
-		"glob": "^13.0.6",
+		"oxfmt": "^0.35.0",
 		"typescript": "^5.9.3",
 		"vitepress": "2.0.0-alpha.16",
 		"vue": "^3.5.29"

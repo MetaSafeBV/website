@@ -1,11 +1,11 @@
-import { readdirSync, statSync, readFileSync, existsSync } from "node:fs";
-import { join } from "node:path";
-import type { DefaultTheme } from "vitepress";
+import { readdirSync, statSync, readFileSync, existsSync } from 'node:fs';
+import { join } from 'node:path';
+import type { DefaultTheme } from 'vitepress';
 
 interface SectionSortConfig {
 	[sectionPath: string]: {
-		sortBy?: "name" | "created_at" | "order";
-		sortOrder?: "asc" | "desc";
+		sortBy?: 'name' | 'created_at' | 'order';
+		sortOrder?: 'asc' | 'desc';
 	};
 }
 
@@ -16,8 +16,8 @@ interface SidebarOptions {
 	collapsed?: boolean;
 	ignoreList?: string[];
 	useFrontmatterTitle?: boolean;
-	sortBy?: "name" | "created_at" | "order";
-	sortOrder?: "asc" | "desc";
+	sortBy?: 'name' | 'created_at' | 'order';
+	sortOrder?: 'asc' | 'desc';
 	sectionSort?: SectionSortConfig;
 	wrapInGroup?: boolean;
 }
@@ -42,11 +42,9 @@ function extractFrontmatter(filePath: string): FrontmatterData | null {
 	}
 
 	try {
-		const content: string = readFileSync(filePath, "utf-8");
+		const content: string = readFileSync(filePath, 'utf-8');
 
-		const frontmatterMatch: RegExpMatchArray | null = content.match(
-			/^---\s*\n([\s\S]*?)\n---/,
-		);
+		const frontmatterMatch: RegExpMatchArray | null = content.match(/^---\s*\n([\s\S]*?)\n---/);
 
 		if (!frontmatterMatch) {
 			return null;
@@ -68,9 +66,7 @@ function extractFrontmatter(filePath: string): FrontmatterData | null {
 		}
 
 		// Extract created_at
-		const createdAtMatch = frontmatterText.match(
-			/created_at:\s*['"]?([^'">\n]+)['"]?/,
-		);
+		const createdAtMatch = frontmatterText.match(/created_at:\s*['"]?([^'">\n]+)['"]?/);
 		if (createdAtMatch) {
 			data.created_at = createdAtMatch[1].trim();
 		}
@@ -91,7 +87,7 @@ function extractTitle(filePath: string): string | null {
 
 	// Fallback to H1 if no frontmatter title
 	try {
-		const content: string = readFileSync(filePath, "utf-8");
+		const content: string = readFileSync(filePath, 'utf-8');
 		const h1Match: RegExpMatchArray | null = content.match(/^#\s+(.+)$/m);
 
 		if (h1Match) {
@@ -108,8 +104,8 @@ function formatName(name: string): string {
 	return (
 		name
 			// Remove number prefixes like "01-"
-			.replace(/^\d+-/, "")
-			.replace(/-/g, " ")
+			.replace(/^\d+-/, '')
+			.replace(/-/g, ' ')
 			.replace(/\b\w/g, (char) => char.toUpperCase())
 	);
 }
@@ -118,11 +114,7 @@ function getFileInfo(dirPath: string, ignoreList: string[]): FileInfo[] {
 	const items: string[] = readdirSync(dirPath);
 
 	const filteredItems = items.filter((item) => {
-		return ignoreList.includes(item) ||
-			item.startsWith(".") ||
-			item.startsWith("_")
-			? false
-			: true;
+		return ignoreList.includes(item) || item.startsWith('.') || item.startsWith('_') ? false : true;
 	});
 
 	const convertedFileItems: FileInfo[] = filteredItems.map((item) => {
@@ -130,16 +122,15 @@ function getFileInfo(dirPath: string, ignoreList: string[]): FileInfo[] {
 		const isDirectory: boolean = statSync(fullPath).isDirectory();
 		const hasIndexMdFile: boolean =
 			isDirectory &&
-			(existsSync(join(fullPath, "index.md")) ||
-				existsSync(join(fullPath, "index.MD")));
+			(existsSync(join(fullPath, 'index.md')) || existsSync(join(fullPath, 'index.MD')));
 
 		let frontmatter: FrontmatterData | undefined;
 
 		// Extract frontmatter for markdown files
-		if (!isDirectory && item.endsWith(".md")) {
+		if (!isDirectory && item.endsWith('.md')) {
 			frontmatter = extractFrontmatter(fullPath) ?? undefined;
 		} else if (hasIndexMdFile) {
-			const indexPath = join(fullPath, "index.md");
+			const indexPath = join(fullPath, 'index.md');
 			frontmatter = extractFrontmatter(indexPath) ?? undefined;
 		}
 
@@ -171,10 +162,10 @@ function getFileInfo(dirPath: string, ignoreList: string[]): FileInfo[] {
 
 function sortFileInfos(
 	fileInfos: FileInfo[],
-	sortBy?: "name" | "created_at" | "order",
-	sortOrder: "asc" | "desc" = "asc",
+	sortBy?: 'name' | 'created_at' | 'order',
+	sortOrder: 'asc' | 'desc' = 'asc',
 ): FileInfo[] {
-	if (!sortBy || sortBy === "name") {
+	if (!sortBy || sortBy === 'name') {
 		return fileInfos;
 	}
 
@@ -189,17 +180,13 @@ function sortFileInfos(
 
 		let comparison = 0;
 
-		if (sortBy === "order") {
+		if (sortBy === 'order') {
 			const orderA = a.frontmatter?.order ?? Number.MAX_SAFE_INTEGER;
 			const orderB = b.frontmatter?.order ?? Number.MAX_SAFE_INTEGER;
 			comparison = orderA - orderB;
-		} else if (sortBy === "created_at") {
-			const dateA = a.frontmatter?.created_at
-				? new Date(a.frontmatter.created_at).getTime()
-				: 0;
-			const dateB = b.frontmatter?.created_at
-				? new Date(b.frontmatter.created_at).getTime()
-				: 0;
+		} else if (sortBy === 'created_at') {
+			const dateA = a.frontmatter?.created_at ? new Date(a.frontmatter.created_at).getTime() : 0;
+			const dateB = b.frontmatter?.created_at ? new Date(b.frontmatter.created_at).getTime() : 0;
 			comparison = dateB - dateA; // Most recent first by default
 		}
 
@@ -208,7 +195,7 @@ function sortFileInfos(
 			comparison = a.name.localeCompare(b.name);
 		}
 
-		return sortOrder === "desc" ? -comparison : comparison;
+		return sortOrder === 'desc' ? -comparison : comparison;
 	});
 
 	return sorted;
@@ -223,7 +210,7 @@ function buildSidebarItems(
 	let fileInfos = getFileInfo(dirPath, options.ignoreList ?? []);
 
 	// Determine which sorting to apply
-	const relativePath = dirPath.replace(basePath, "").replace(/\\/g, "/");
+	const relativePath = dirPath.replace(basePath, '').replace(/\\/g, '/');
 	const sectionConfig = options.sectionSort?.[relativePath];
 
 	const sortBy = sectionConfig?.sortBy ?? options.sortBy;
@@ -236,8 +223,8 @@ function buildSidebarItems(
 
 	for (const info of fileInfos) {
 		if (info.isDirectory) {
-			const relativePath = info.path.replace(basePath, "").replace(/\\/g, "/");
-			const indexPath = join(info.path, "index.md");
+			const relativePath = info.path.replace(basePath, '').replace(/\\/g, '/');
+			const indexPath = join(info.path, 'index.md');
 			const hasIndexMdFile = existsSync(indexPath);
 
 			const text =
@@ -253,9 +240,7 @@ function buildSidebarItems(
 
 			// If directory only has index.md and no child items, add as direct link
 			if (hasIndexMdFile && childItems.length === 0) {
-				const linkPath = options.locale
-					? `/${options.locale}${relativePath}/`
-					: `${relativePath}/`;
+				const linkPath = options.locale ? `/${options.locale}${relativePath}/` : `${relativePath}/`;
 
 				items.push({
 					text,
@@ -271,9 +256,7 @@ function buildSidebarItems(
 			};
 
 			if (hasIndexMdFile) {
-				const linkPath = options.locale
-					? `/${options.locale}${relativePath}/`
-					: `${relativePath}/`;
+				const linkPath = options.locale ? `/${options.locale}${relativePath}/` : `${relativePath}/`;
 				sidebarItem.link = linkPath;
 			}
 
@@ -284,29 +267,23 @@ function buildSidebarItems(
 			if (hasIndexMdFile || childItems.length > 0) {
 				items.push(sidebarItem);
 			}
-		} else if (
-			info.name.endsWith(".md") &&
-			info.name.toLowerCase() !== "index.md"
-		) {
+		} else if (info.name.endsWith('.md') && info.name.toLowerCase() !== 'index.md') {
 			// Handle markdown file (skip index.md as it's handled by parent)
-			const fileName = info.name.replace(/\.md$/i, "");
+			const fileName = info.name.replace(/\.md$/i, '');
 			const relativePath = info.path
-				.replace(basePath, "")
-				.replace(/\\/g, "/")
-				.replace(/\.md$/i, "");
+				.replace(basePath, '')
+				.replace(/\\/g, '/')
+				.replace(/\.md$/i, '');
 
 			const text =
-				(options.useFrontmatterTitle
-					? extractTitle(info.path)
-					: formatName(fileName)) ?? formatName(fileName);
+				(options.useFrontmatterTitle ? extractTitle(info.path) : formatName(fileName)) ??
+				formatName(fileName);
 
 			if (!text) {
 				continue;
 			}
 
-			const linkPath = options.locale
-				? `/${options.locale}${relativePath}`
-				: relativePath;
+			const linkPath = options.locale ? `/${options.locale}${relativePath}` : relativePath;
 
 			items.push({
 				text,
@@ -318,10 +295,8 @@ function buildSidebarItems(
 	return items;
 }
 
-export function generateSidebar(
-	options: SidebarOptions,
-): DefaultTheme.SidebarItem[] {
-	const { locale, srcDir = "src", rootPath, wrapInGroup = false } = options;
+export function generateSidebar(options: SidebarOptions): DefaultTheme.SidebarItem[] {
+	const { locale, srcDir = 'src', rootPath, wrapInGroup = false } = options;
 	const localeDir = join(process.cwd(), srcDir, locale);
 
 	if (!existsSync(localeDir)) {
@@ -341,13 +316,13 @@ export function generateSidebar(
 
 	// If wrapInGroup is true and rootPath is specified, wrap items in a parent group
 	if (wrapInGroup && rootPath) {
-		const indexPath = join(startDir, "index.md");
+		const indexPath = join(startDir, 'index.md');
 		const hasIndexMdFile = existsSync(indexPath);
 
 		const text =
 			hasIndexMdFile && options.useFrontmatterTitle
 				? extractTitle(indexPath)
-				: formatName(rootPath.split("/").pop() || rootPath);
+				: formatName(rootPath.split('/').pop() || rootPath);
 
 		if (!text) {
 			return items;
@@ -360,9 +335,7 @@ export function generateSidebar(
 		};
 
 		if (hasIndexMdFile) {
-			const linkPath = locale
-				? `/${locale}${relativePath}/`
-				: `${relativePath}/`;
+			const linkPath = locale ? `/${locale}${relativePath}/` : `${relativePath}/`;
 			sidebarItem.link = linkPath;
 		}
 

@@ -12,16 +12,10 @@
 					MetaSafe BV is a wholly owned subsidiary of MetaMaterial Works BV.
 				</p>
 				<div class="hero-actions">
-					<a
-						:href="constructLocaleWithLocaleSegment(locale, '/product/')"
-						class="btn btn-primary"
-					>
+					<a :href="constructLocaleWithLocaleSegment(locale, '/product/')" class="btn btn-primary">
 						Product
 					</a>
-					<a
-						:href="constructLocaleWithLocaleSegment(locale, '/about/')"
-						class="btn btn-secondary"
-					>
+					<a :href="constructLocaleWithLocaleSegment(locale, '/about/')" class="btn btn-secondary">
 						About Us
 					</a>
 				</div>
@@ -31,8 +25,7 @@
 			<div class="container">
 				<h2 class="section-title">Understanding MetaSafe</h2>
 				<p class="section-subtitle">
-					The science and technology behind MetaSafe's advanced protection
-					solutions.
+					The science and technology behind MetaSafe's advanced protection solutions.
 				</p>
 				<VideoSection :videoUrl="videoSrc" />
 			</div>
@@ -41,8 +34,7 @@
 			<div class="container">
 				<h2 class="section-title">Key Features</h2>
 				<p class="section-subtitle">
-					Discover the innovative features that make MetaSafe's protection
-					solutions stand out.
+					Discover the innovative features that make MetaSafe's protection solutions stand out.
 				</p>
 				<div class="features-grid">
 					<FeatureCard
@@ -60,8 +52,8 @@
 			<div class="container">
 				<h2 class="section-title">Leadership</h2>
 				<p class="section-subtitle">
-					MetaSafe is led by experienced co-founders combining academic research
-					excellence with industrial expertise
+					MetaSafe is led by experienced co-founders combining academic research excellence with
+					industrial expertise
 				</p>
 				<div class="leadership-card-container">
 					<LeadershipCard
@@ -86,14 +78,10 @@
 					<div class="news-tagline">
 						<h2 class="news-title">Want to Know More?</h2>
 						<p class="news-text">
-							Stay updated with the latest news, insights, and developments from
-							MetaSafe.
+							Stay updated with the latest news, insights, and developments from MetaSafe.
 						</p>
 					</div>
-					<a
-						:href="constructLocaleWithLocaleSegment(locale, '/news/')"
-						class="btn btn-primary"
-					>
+					<a :href="constructLocaleWithLocaleSegment(locale, '/news/')" class="btn btn-primary">
 						Read Our News
 					</a>
 				</div>
@@ -103,25 +91,25 @@
 </template>
 
 <script setup lang="ts">
-import VideoSection from "../components/VideoSection.vue";
-import ThemeToggle from "../components/ThemeToggle.vue";
-import FeatureCard from "../components/FeatureCard.vue";
-import { BENEFIT_CARDS } from "./home-data";
-import { LEADERSHIP_MEMBERS } from "./team/team";
-import { constructLocaleWithLocaleSegment } from "../utils/pathHelper";
-import LeadershipCard from "./team/LeadershipCard.vue";
+import VideoSection from '../components/VideoSection.vue';
+import ThemeToggle from '../components/ThemeToggle.vue';
+import FeatureCard from '../components/FeatureCard.vue';
+import { BENEFIT_CARDS } from './home-data';
+import { LEADERSHIP_MEMBERS } from './team/team';
+import { constructLocaleWithLocaleSegment } from '../utils/pathHelper';
+import LeadershipCard from './team/LeadershipCard.vue';
 
 // @ts-expect-error - png import
-import logoSrc from "../assets/branding/MetaSafe_logo_3.2.png";
+import logoSrc from '../assets/branding/MetaSafe_logo_3.2.png';
 // @ts-expect-error - svg import
-import videoSrc from "../assets/video/AMSIA.mp4";
+import videoSrc from '../assets/video/AMSIA.mp4';
 
 const props = withDefaults(
 	defineProps<{
 		locale?: string;
 	}>(),
 	{
-		locale: "en",
+		locale: 'en',
 	},
 );
 </script>
@@ -181,11 +169,7 @@ const props = withDefaults(
 	text-align: center;
 	align-items: center;
 	justify-content: center;
-	background: linear-gradient(
-		135deg,
-		var(--bg-primary) 0%,
-		var(--bg-secondary) 100%
-	);
+	background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
 }
 
 .hero-logo {
@@ -203,11 +187,7 @@ const props = withDefaults(
 
 .gradient-text {
 	background-clip: text;
-	background: linear-gradient(
-		135deg,
-		var(--color-primary) 0%,
-		var(--color-secondary) 100%
-	);
+	background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
@@ -344,11 +324,7 @@ const props = withDefaults(
 
 .news-section {
 	width: 100%;
-	background: linear-gradient(
-		135deg,
-		var(--color-primary) 0%,
-		var(--color-secondary) 100%
-	);
+	background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
 	margin-top: auto;
 	padding-bottom: 5rem;
 }

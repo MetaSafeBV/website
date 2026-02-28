@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { FeatureCardProps } from "./types";
+import { FeatureCardProps } from './types';
 
 defineProps<FeatureCardProps>();
 </script>
