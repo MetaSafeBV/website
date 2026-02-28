@@ -7,18 +7,22 @@
 		"docs:dev": "vitepress dev",
 		"docs:build": "vitepress build",
 		"docs:preview": "vitepress preview",
-		"lint:spell": "cspell --config ./cspell.yaml \"**/*.{ts,md,json,vue}\" --verbose"
+		"lint:spell": "cspell --config ./cspell.yaml \"**/*.{ts,md,json,vue}\" --verbose",
+		"fmt": "oxfmt",
+		"fmt:check": "oxfmt --check",
+		"lint": "oxlint",
+		"lint:fix": "oxlint --fix"
 	},
 	"devDependencies": {
 		"@cspell/dict-vue": "^3.0.5",
 		"@tsconfig/node24": "^24.0.4",
 		"@types/node": "^25.3.0",
-		"cspell": "^9.6.4",
-		"fs": "0.0.1-security",
-		"glob": "^13.0.6",
+		"cspell": "^9.7.0",
+		"oxfmt": "^0.35.0",
+		"oxlint": "^1.50.0",
 		"typescript": "^5.9.3",
 		"vitepress": "2.0.0-alpha.16",
-		"vue": "^3.5.28"
+		"vue": "^3.5.29"
 	},
-	"packageManager": "pnpm@10.30.1+sha512.3590e550d5384caa39bd5c7c739f72270234b2f6059e13018f975c313b1eb9fefcc09714048765d4d9efe961382c312e624572c0420762bdc5d5940cdf9be73a"
+	"packageManager": "pnpm@10.30.3+sha512.c961d1e0a2d8e354ecaa5166b822516668b7f44cb5bd95122d590dd81922f606f5473b6d23ec4a5be05e7fcd18e8488d47d978bbe981872f1145d06e9a740017"
 }

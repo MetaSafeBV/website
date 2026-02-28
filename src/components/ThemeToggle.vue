@@ -38,7 +38,7 @@
 </template>
 
 <script setup lang="ts">
-import { useData } from "vitepress";
+import { useData } from 'vitepress';
 
 const { isDark } = useData();
 

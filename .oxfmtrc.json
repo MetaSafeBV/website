@@ -1,0 +1,11 @@
+{
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"semi": true,
+	"tabWidth": 2,
+	"useTabs": true,
+	"printWidth": 100,
+	"singleQuote": true,
+	"trailingComma": "all",
+	"sortPackageJson": true,
+	"ignorePatterns": ["pnpm-lock.yaml", "node_modules", ".husky"]
+}

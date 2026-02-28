@@ -1,4 +1,4 @@
-import { LeadershipCardProps } from "./leadership-card";
+import { LeadershipCardProps } from './leadership-card';
 
 export interface TeamMemberCardProps {
 	imageSrc: string;
@@ -19,57 +19,56 @@ export interface TeamPageProps {
 
 export const LEADERSHIP_MEMBERS = [
 	{
-		name: "Bernard Ennis",
-		role: "Co-Founder & CEO",
-		expertise:
-			"30+ years industrial experience in Automotive, Marine and Electrical sectors",
-		imageSrc: "/assets/team/Bernard_C12_0740_head.jpg",
-		imageAlt: "Bernard",
+		name: 'Bernard Ennis',
+		role: 'Co-Founder & CEO',
+		expertise: '30+ years industrial experience in Automotive, Marine and Electrical sectors',
+		imageSrc: '/assets/team/Bernard_C12_0740_head.jpg',
+		imageAlt: 'Bernard',
 	},
 	{
-		name: "Corentin Coulais",
-		role: "Co-Founder & CSO",
-		expertise: "Associate Professor, University of Amsterdam",
-		imageSrc: "/assets/team/Corentin_C12_0783_profile.jpg",
-		imageAlt: "Corentin",
+		name: 'Corentin Coulais',
+		role: 'Co-Founder & CSO',
+		expertise: 'Associate Professor, University of Amsterdam',
+		imageSrc: '/assets/team/Corentin_C12_0783_profile.jpg',
+		imageAlt: 'Corentin',
 	},
 ] as const satisfies LeadershipCardProps[];
 
 export const TEAM_MEMBERS = [
 	{
-		imageSrc: "/assets/team/Bernard_C12_0740_head.jpg",
-		imageAlt: "Bernard",
-		name: "Bernard",
-		role: "Co-Founder & CEO",
+		imageSrc: '/assets/team/Bernard_C12_0740_head.jpg',
+		imageAlt: 'Bernard',
+		name: 'Bernard',
+		role: 'Co-Founder & CEO',
 		description:
 			"Leading MetaSafe's vision of bringing metamaterials out of the lab and into the real world.",
 		social: {
-			linkedin: "https://www.linkedin.com/in/ennisbl/",
-			mailto: "mailto:bernard.ennis@metamaterialworks.com",
+			linkedin: 'https://www.linkedin.com/in/ennisbl/',
+			mailto: 'mailto:bernard.ennis@metamaterialworks.com',
 		},
 	},
 	{
-		imageSrc: "/assets/team/Corentin_C12_0783_profile.jpg",
-		imageAlt: "Corentin",
-		name: "Corentin",
-		role: "Co-Founder & CSO",
+		imageSrc: '/assets/team/Corentin_C12_0783_profile.jpg',
+		imageAlt: 'Corentin',
+		name: 'Corentin',
+		role: 'Co-Founder & CSO',
 		description:
-			"Leading scientific research and development initiatives in dissipative mechanical metamaterials.",
+			'Leading scientific research and development initiatives in dissipative mechanical metamaterials.',
 		social: {
-			linkedin: "https://www.linkedin.com/in/corentin-coulais-187b02254/",
-			website: "https://coulaislab.com/",
-			mailto: "mailto:coulais@uva.nl",
+			linkedin: 'https://www.linkedin.com/in/corentin-coulais-187b02254/',
+			website: 'https://coulaislab.com/',
+			mailto: 'mailto:coulais@uva.nl',
 		},
 	},
 	{
-		imageSrc: "/assets/team/Spyros_head.jpg",
-		imageAlt: "Spyros",
-		name: "Spyros",
-		role: "Mechanical Engineer",
-		description: "Turning metamaterials science into mechanical systems.",
+		imageSrc: '/assets/team/Spyros_head.jpg',
+		imageAlt: 'Spyros',
+		name: 'Spyros',
+		role: 'Mechanical Engineer',
+		description: 'Turning metamaterials science into mechanical systems.',
 		social: {
-			linkedin: "https://www.linkedin.com/in/spyridon-fyllaridis/",
-			mailto: "mailto:s.fyllaridis@uva.nl",
+			linkedin: 'https://www.linkedin.com/in/spyridon-fyllaridis/',
+			mailto: 'mailto:s.fyllaridis@uva.nl',
 		},
 	},
 ] as const satisfies TeamMemberCardProps[];

@@ -1,28 +1,26 @@
 $schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
-version: "0.2"
+version: '0.2'
 useGitignore: true
 language: en-gb,en-us,lorem-ipsum
 
 ignorePaths:
-  - ".husky/**"
-  - ".github/**"
-  - ".vscode/**"
-  - "**/dist/**"
-  - "**/build/**"
-  - "CHANGELOG.md"
-  - "**/coverage/**"
-  - "**/.vitepress/**"
-  - "**/pnpm-lock.yaml"
-  - "**/node_modules/**"
-  - "**/config/cspell/**"
-  - "**/pnpm-workspace.yaml"
+  - '.husky/**'
+  - '.github/**'
+  - '.vscode/**'
+  - '**/dist/**'
+  - '**/build/**'
+  - '**/.vitepress/**'
+  - '**/pnpm-lock.yaml'
+  - '**/node_modules/**'
+  - '**/config/cspell/**'
+  - '**/pnpm-workspace.yaml'
 
 dictionaryDefinitions:
   - name: project-terms
-    path: "./config/cspell/project-terms.txt"
+    path: './config/cspell/project-terms.txt'
     addWords: true
   - name: javascript-terms
-    path: "./config/cspell/javascript-terms.txt"
+    path: './config/cspell/javascript-terms.txt'
     addWords: true
 
 dictionaries:
@@ -37,4 +35,4 @@ languageSettings:
       - typescript
 
 import:
-  - "@cspell/dict-vue/cspell-ext.json"
+  - '@cspell/dict-vue/cspell-ext.json'

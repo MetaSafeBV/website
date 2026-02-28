@@ -37,13 +37,13 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, useTemplateRef, ref } from "vue";
-import type { VideoSectionProps } from "./types";
+import { onMounted, onUnmounted, useTemplateRef, ref } from 'vue';
+import type { VideoSectionProps } from './types';
 
 const props = defineProps<VideoSectionProps>();
 
-const videoElement = useTemplateRef("videoElement");
-const videoContainer = useTemplateRef("videoContainer");
+const videoElement = useTemplateRef('videoElement');
+const videoContainer = useTemplateRef('videoContainer');
 const isPlaying = ref(true);
 
 let observer: IntersectionObserver | null = null;
@@ -78,10 +78,10 @@ onMounted(() => {
 		}
 
 		// Sync isPlaying state with actual video state
-		videoElement.value.addEventListener("play", () => {
+		videoElement.value.addEventListener('play', () => {
 			isPlaying.value = true;
 		});
-		videoElement.value.addEventListener("pause", () => {
+		videoElement.value.addEventListener('pause', () => {
 			isPlaying.value = false;
 		});
 	}
@@ -160,9 +160,7 @@ onUnmounted(() => {
 }
 
 .dark .play-pause-btn {
-	background: oklch(
-		0.1569 0.0138 285.82 / 0.95
-	); /* slate-950 with slight transparency */
+	background: oklch(0.1569 0.0138 285.82 / 0.95); /* slate-950 with slight transparency */
 	color: oklch(1 0 0); /* white */
 }
 

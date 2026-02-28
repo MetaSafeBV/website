@@ -1,5 +1,3 @@
-import { Component } from "vue";
-
 export interface VideoSectionProps {
 	videoUrl: string;
 	title?: string;

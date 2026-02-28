@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { StatItemProps } from "./types";
+import { StatItemProps } from './types';
 
 defineProps<StatItemProps>();
 </script>
