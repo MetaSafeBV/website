@@ -66,7 +66,6 @@ const imgAlt = computed<string>(() => {
 }
 
 .team-card:hover {
-	transform: translateY(-4px);
 	border: 1px solid var(--vp-c-brand);
 	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }

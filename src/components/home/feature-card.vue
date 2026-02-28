@@ -21,16 +21,15 @@ defineProps<FeatureCardProps>();
 	height: 100%;
 	padding: 1.5rem;
 	border-radius: 1rem;
-	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 	background: var(--vp-c-bg-soft);
 	border: 1px solid var(--vp-c-divider);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .feature-card:hover {
-	transform: translateY(-2px) scale(1.01);
-	box-shadow: 0 8px 30px var(--vp-shadow-2);
 	border-color: var(--vp-c-brand-1);
+	box-shadow: 0 8px 30px var(--vp-shadow-2);
 }
 
 @media (prefers-reduced-motion: reduce) {
