@@ -21,7 +21,7 @@
 import { markdownToHtml } from '../../utils/markdown-to-html';
 import { NewsItemProps } from './news';
 
-const props = defineProps<NewsItemProps>();
+defineProps<NewsItemProps>();
 </script>
 
 <style scoped>
