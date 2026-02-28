@@ -1,4 +1,4 @@
-import { LeadershipCardProps } from './leadership-card';
+import { type LeadershipCardProps } from '~/components/team/leadership-card';
 
 export interface TeamMemberCardProps {
 	imageSrc: string;

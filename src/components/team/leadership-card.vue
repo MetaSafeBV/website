@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import { LeadershipCardProps } from './leadership-card';
+import { type LeadershipCardProps } from '~/components/team/leadership-card';
 
 defineProps<LeadershipCardProps>();
 </script>

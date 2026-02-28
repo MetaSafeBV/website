@@ -10,8 +10,8 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { NewsItemProps, NewsPageProps } from './news';
-import NewsListItem from './news-list-item.vue';
+import { type NewsItemProps, type NewsPageProps } from '~/components/news/news';
+import NewsListItem from '~/components/news/news-list-item.vue';
 
 const props = defineProps<NewsPageProps>();
 

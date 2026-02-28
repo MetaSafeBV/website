@@ -1,5 +1,3 @@
-import sanitizeHtml from 'sanitize-html';
-
 const SUBSTITUTION_MAP: [string, string][] = [
 	['**', '<strong>$1</strong>'],
 	['__', '<strong>$1</strong>'],
@@ -18,5 +16,5 @@ export function markdownToHtml(markdown: string): string {
 		html = html.replace(regex, htmlTag);
 	}
 
-	return sanitizeHtml(html);
+	return html;
 }

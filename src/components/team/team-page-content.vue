@@ -23,16 +23,15 @@
 </template>
 
 <script setup lang="ts">
-import { TeamPageProps } from './team-page-data';
-import TeamMemberCard from './team-member-card.vue';
+import { type TeamPageProps } from '~/components/team/team-page-data';
+import TeamMemberCard from '~/components/team/team-member-card.vue';
 
 defineProps<TeamPageProps>();
 </script>
 
 <style scoped>
 .team-header {
-	text-align: center;
-	margin-bottom: 3rem;
+	padding-bottom: 3rem;
 }
 
 .team-header h1 {

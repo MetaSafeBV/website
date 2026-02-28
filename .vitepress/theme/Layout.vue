@@ -1,10 +1,17 @@
+<template>
+	<DefaultTheme.Layout />
+</template>
+
 <script setup lang="ts">
 import { inBrowser, useData, useRouter } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
-import { watchEffect, onMounted } from 'vue';
+import { watchEffect, onMounted, ref } from 'vue';
+import { getValidLocaleForNavigation } from '~/utils/locale-helper';
 
-const { lang } = useData();
 const router = useRouter();
+const { lang } = useData();
+
+const navigationLocale = ref<string>(getValidLocaleForNavigation(lang.value));
 
 watchEffect(() => {
 	if (inBrowser) {
@@ -13,13 +20,12 @@ watchEffect(() => {
 });
 
 onMounted(() => {
-	// Redirect from root to /en/
 	if (inBrowser && window.location.pathname === '/') {
-		router.go('/en/');
+		router.go(`/${navigationLocale.value}/`);
 	}
 });
-</script>
 
-<template>
-	<DefaultTheme.Layout />
-</template>
+defineExpose({
+	navigationLocale,
+});
+</script>

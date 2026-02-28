@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress';
 import { en } from './locales/en';
+import path from 'node:path';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -9,6 +10,14 @@ export default defineConfig({
 	lastUpdated: false,
 	outDir: '.vitepress/dist',
 	base: process.env['VP_BASE'] || '/',
+	vite: {
+		resolve: {
+			alias: {
+				'~': path.resolve(__dirname, '../src'),
+				'~vitepress': path.resolve(__dirname, '../.vitepress'),
+			},
+		},
+	},
 	head: [
 		[
 			'link',

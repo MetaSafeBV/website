@@ -4,9 +4,17 @@ title: 🚀 MetaSafe Selected as Hello Tomorrow Deep Tech Pioneer 2026
 created_at: 2026-02-27
 ---
 
-# 🚀 MetaSafe Selected as Hello Tomorrow Deep Tech Pioneer 2026
+<script setup lang="ts">
+import { formatNewsDate } from '~/utils/date-helper';
 
-_February 2026_
+function formatDate(date: string) {
+	return formatNewsDate(new Date(date));
+}
+</script>
+
+# {{ $frontmatter.title }}
+
+_{{ formatDate($frontmatter.created_at) }}_
 
 ![Hello Tomorrow Deep Tech Pioneers](/assets/news/Metamaterial_Works-Has-Been-Selected-As.png)
 

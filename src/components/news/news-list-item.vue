@@ -18,8 +18,8 @@
 </template>
 
 <script setup lang="ts">
-import { markdownToHtml } from '../../utils/markdown-to-html';
-import { NewsItemProps } from './news';
+import { markdownToHtml } from '~/utils/markdown-to-html';
+import { type NewsItemProps } from '~/components/news/news';
 
 defineProps<NewsItemProps>();
 </script>

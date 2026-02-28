@@ -38,7 +38,7 @@
 
 <script setup lang="ts">
 import { onMounted, onUnmounted, useTemplateRef, ref } from 'vue';
-import type { VideoSectionProps } from './types';
+import type { VideoSectionProps } from '~/components/home/types';
 
 const props = defineProps<VideoSectionProps>();
 
@@ -97,19 +97,21 @@ onUnmounted(() => {
 <style scoped>
 .video-section {
 	width: 100%;
-	max-width: 1200px;
 	margin: 0 auto;
+	padding: 1rem;
+	max-width: 1100px;
 }
 
 .video-container {
-	position: relative;
 	width: 100%;
-	padding-bottom: 56.25%; /* 16:9 aspect ratio */
-	border-radius: 12px;
+	cursor: pointer;
 	overflow: hidden;
+	position: relative;
+	border-radius: 12px;
+	/* 16:9 aspect ratio */
+	padding-bottom: 56.25%;
 	box-shadow: var(--shadow-xl);
 	background: var(--bg-secondary);
-	cursor: pointer;
 }
 
 .video-container iframe,
@@ -144,10 +146,12 @@ onUnmounted(() => {
 .play-pause-btn {
 	width: 80px;
 	height: 80px;
-	background: oklch(1 0 0 / 0.95); /* white with slight transparency */
+	/* white with slight transparency */
+	background: oklch(1 0 0 / 0.95);
 	border: none;
 	border-radius: 50%;
-	color: oklch(0.1569 0.0138 285.82); /* slate-950 */
+	/* slate-950 */
+	color: oklch(0.1569 0.0138 285.82);
 	cursor: pointer;
 	display: flex;
 	align-items: center;
@@ -160,8 +164,10 @@ onUnmounted(() => {
 }
 
 .dark .play-pause-btn {
-	background: oklch(0.1569 0.0138 285.82 / 0.95); /* slate-950 with slight transparency */
-	color: oklch(1 0 0); /* white */
+	/* slate-950 with slight transparency */
+	background: oklch(0.1569 0.0138 285.82 / 0.95);
+	/* white */
+	color: oklch(1 0 0);
 }
 
 .video-container:hover .play-pause-btn {
@@ -170,12 +176,14 @@ onUnmounted(() => {
 }
 
 .play-pause-btn:hover {
-	background: oklch(1 0 0); /* solid white */
+	/* solid white */
+	background: oklch(1 0 0);
 	transform: scale(1.1);
 }
 
 .dark .play-pause-btn:hover {
-	background: oklch(0.1569 0.0138 285.82); /* solid slate-950 */
+	/* solid slate-950 */
+	background: oklch(0.1569 0.0138 285.82);
 }
 
 .play-pause-btn:active {

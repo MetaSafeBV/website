@@ -1,4 +1,8 @@
-import { FeatureCardProps } from './types';
+import { type FeatureCardProps } from '~/components/home/types';
+
+export interface HomePageContentProps {
+	locale?: string;
+}
 
 export const BENEFIT_CARDS = [
 	{

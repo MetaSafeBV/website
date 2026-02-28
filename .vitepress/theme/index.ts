@@ -8,6 +8,10 @@ import { onMounted, watch } from 'vue';
 import './css/style.css';
 import './css/colors.css';
 
+export enum SupportedLocales {
+	EN = 'en',
+}
+
 export default {
 	extends: DefaultTheme,
 	Layout,
