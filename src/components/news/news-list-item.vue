@@ -1,6 +1,6 @@
 <template>
-	<a class="news-list-item" :href="link">
-		<img :src="imageSrc" :alt="imgAlt" class="news-list-item-image" />
+	<a class="news-list-item" :href="link" :aria-label="`Read article: ${title}`">
+		<img :src="imageSrc" :alt="imgAlt" class="news-list-item-image" loading="lazy" />
 		<div class="news-list-item-content">
 			<div class="news-list-item-header">
 				<h3 class="news-list-item-title">{{ title }}</h3>
@@ -10,9 +10,9 @@
 					v-html="markdownToHtml(description || '')"
 				></p>
 			</div>
-			<p class="news-list-item-created-at">
+			<time class="news-list-item-created-at" :datetime="creationDate">
 				{{ createdAt }}
-			</p>
+			</time>
 		</div>
 	</a>
 </template>
@@ -20,8 +20,13 @@
 <script setup lang="ts">
 import { markdownToHtml } from '~/utils/markdown-to-html';
 import { type NewsItemProps } from '~/components/news/news';
+import { computed } from 'vue';
 
-defineProps<NewsItemProps>();
+const props = defineProps<NewsItemProps>();
+
+const imgAlt = computed<string>(() => {
+	return props.imgAlt || `${props.title} thumbnail`;
+});
 </script>
 
 <style scoped>
@@ -43,6 +48,21 @@ defineProps<NewsItemProps>();
 	transform: translateY(-4px);
 	box-shadow: var(--shadow-lg);
 	border-color: var(--color-primary);
+}
+
+.news-list-item:focus-visible {
+	outline: 3px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.news-list-item {
+		transition: none;
+	}
+
+	.news-list-item:hover {
+		transform: none;
+	}
 }
 
 .news-list-item-image {

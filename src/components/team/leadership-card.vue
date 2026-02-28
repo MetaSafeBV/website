@@ -1,6 +1,6 @@
 <template>
-	<div class="leadership-card">
-		<img :src="imageSrc" :alt="imageAlt" class="leadership-photo" />
+	<article class="leadership-card" role="listitem">
+		<img :src="imageSrc" :alt="imgAlt" class="leadership-photo" loading="lazy" />
 		<div class="leadership-card-content">
 			<div class="leadership-header">
 				<h3>{{ name }}</h3>
@@ -10,13 +10,18 @@
 				{{ expertise }}
 			</p>
 		</div>
-	</div>
+	</article>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
 import { type LeadershipCardProps } from '~/components/team/leadership-card';
 
-defineProps<LeadershipCardProps>();
+const props = defineProps<LeadershipCardProps>();
+
+const imgAlt = computed<string>(() => {
+	return props.imageAlt || `Photo of ${props.name}`;
+});
 </script>
 
 <style scoped>
@@ -37,6 +42,16 @@ defineProps<LeadershipCardProps>();
 	transform: translateY(-4px);
 	box-shadow: var(--shadow-lg);
 	border-color: var(--color-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.leadership-card {
+		transition: none;
+	}
+
+	.leadership-card:hover {
+		transform: none;
+	}
 }
 
 .leadership-photo {

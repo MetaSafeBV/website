@@ -1,7 +1,7 @@
 <template>
-	<div class="team-card">
+	<article class="team-card" role="listitem">
 		<div class="team-photo">
-			<img :src="imageSrc" :alt="imageAlt" />
+			<img :src="imageSrc" :alt="imgAlt" loading="lazy" />
 		</div>
 		<div class="team-info">
 			<div class="team-header">
@@ -15,33 +15,38 @@
 				<a
 					v-if="social.linkedin"
 					:href="social.linkedin"
-					aria-label="LinkedIn"
+					:aria-label="`${name}'s LinkedIn profile`"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<i class="fab fa-linkedin"></i>
+					<i class="fab fa-linkedin" aria-hidden="true"></i>
 				</a>
-				<a v-if="social.mailto" :href="social.mailto" aria-label="Email">
-					<i class="fas fa-envelope"> </i>
+				<a v-if="social.mailto" :href="social.mailto" :aria-label="`Email ${name}`">
+					<i class="fas fa-envelope" aria-hidden="true"> </i>
 				</a>
 				<a
 					v-if="social.website"
 					:href="social.website"
-					aria-label="Website"
+					:aria-label="`${name}'s website`"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<i class="fas fa-globe"></i>
+					<i class="fas fa-globe" aria-hidden="true"></i>
 				</a>
 			</div>
 		</div>
-	</div>
+	</article>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
 import { type TeamMemberCardProps } from '~/components/team/team-page-data';
 
-defineProps<TeamMemberCardProps>();
+const props = defineProps<TeamMemberCardProps>();
+
+const imgAlt = computed<string>(() => {
+	return props.imageAlt || `Photo of ${props.name}`;
+});
 </script>
 
 <style scoped>
@@ -134,6 +139,26 @@ defineProps<TeamMemberCardProps>();
 
 .team-social a:hover {
 	color: var(--vp-c-indigo-2);
+}
+
+.team-social a:focus-visible {
+	outline: 2px solid var(--vp-c-brand-1);
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.team-card {
+		transition: none;
+	}
+
+	.team-card:hover {
+		transform: none;
+	}
+
+	.team-social a {
+		transition: none;
+	}
 }
 
 @media (max-width: 768px) {

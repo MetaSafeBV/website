@@ -121,6 +121,29 @@
 	--vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
 }
 
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+.vp-doc {
+	line-height: 1.7;
+}
+
+.vp-doc p {
+	max-width: 70ch;
+}
+
+.VPNavBar {
+	will-change: transform;
+}
+
 /**
  * Home page overrides - remove VitePress container constraints
  */

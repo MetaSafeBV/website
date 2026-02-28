@@ -11,5 +11,3 @@ const { lang } = useData();
 
 const navigationLocale = getValidLocaleForNavigation(lang.value);
 </script>
-
-<style scoped></style>

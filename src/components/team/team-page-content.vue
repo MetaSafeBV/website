@@ -1,13 +1,13 @@
 <template>
 	<div class="team-page">
-		<div class="team-header">
+		<header class="team-header">
 			<h1>Meet Our Team</h1>
 			<p class="team-intro">
 				Our dedicated team brings together expertise in materials science, engineering, and
 				innovation to deliver cutting-edge protection solutions.
 			</p>
-		</div>
-		<div class="team-list-container">
+		</header>
+		<div class="team-list-container" role="list">
 			<team-member-card
 				v-for="member in teamMembers"
 				:key="member.name"

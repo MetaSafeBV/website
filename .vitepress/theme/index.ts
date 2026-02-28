@@ -34,7 +34,13 @@ export default {
 					}
 
 					onMounted(() => {
+						if (!localStorage.getItem('vitepress-theme-appearance')) {
+							const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+							isDark.value = prefersDark;
+						}
+
 						updateTheme();
+
 						watch(isDark, updateTheme);
 					});
 				},

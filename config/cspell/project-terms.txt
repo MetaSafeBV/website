@@ -3,6 +3,7 @@ Corentin
 Coulais
 elastoplastic
 frontmatter
+Fyllaridis
 lightweighting
 metasafe
 nanoprinted

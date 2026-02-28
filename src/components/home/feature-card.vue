@@ -1,13 +1,13 @@
 <template>
-	<div class="feature-card">
+	<article class="feature-card" role="listitem">
 		<div class="feature-header">
-			<div class="feature-icon" :style="{ backgroundColor: iconColor }">
+			<div class="feature-icon" :style="{ backgroundColor: iconColor }" aria-hidden="true">
 				<i :class="icon"></i>
 			</div>
 			<h3 class="feature-title">{{ title }}</h3>
 		</div>
 		<p class="feature-description">{{ description }}</p>
-	</div>
+	</article>
 </template>
 
 <script setup lang="ts">
@@ -31,6 +31,21 @@ defineProps<FeatureCardProps>();
 	transform: translateY(-2px) scale(1.01);
 	box-shadow: 0 8px 30px var(--vp-shadow-2);
 	border-color: var(--vp-c-brand-1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.feature-card,
+	.feature-icon {
+		transition: none;
+	}
+
+	.feature-card:hover {
+		transform: none;
+	}
+
+	.feature-card:hover .feature-icon {
+		transform: none;
+	}
 }
 
 .feature-header {

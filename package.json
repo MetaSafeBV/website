@@ -7,6 +7,7 @@
 		"docs:dev": "vitepress dev",
 		"docs:build": "vitepress build",
 		"docs:preview": "vitepress preview",
+		"docs:build:analyze": "vitepress build --analyze",
 		"lint:spell": "cspell --config ./cspell.yaml \"**/*.{ts,md,json,vue}\" --verbose",
 		"fmt": "oxfmt",
 		"fmt:check": "oxfmt --check",

@@ -1,20 +1,24 @@
 <template>
-	<div class="home-section">
-		<div class="home-section-header">
-			<h2 class="home-section-title">{{ title }}</h2>
+	<section class="home-section" :aria-labelledby="sectionId">
+		<header class="home-section-header">
+			<h2 class="home-section-title" :id="sectionId">{{ title }}</h2>
 			<p class="home-section-subtitle">{{ subtitle }}</p>
-		</div>
+		</header>
 		<div class="home-section-content">
 			<slot />
 		</div>
-	</div>
+	</section>
 </template>
 
 <script setup lang="ts">
-defineProps<{
+import { computed } from 'vue';
+
+const props = defineProps<{
 	title: string;
 	subtitle: string;
 }>();
+
+const sectionId = computed<string>(() => props.title.toLowerCase().replace(/\s+/g, '-'));
 </script>
 
 <style scoped>
@@ -47,11 +51,26 @@ defineProps<{
 	margin: 0;
 	font-size: 1rem;
 	line-height: 1.6;
+	max-width: 65ch;
 	color: var(--text-secondary);
 }
 
 .home-section-content {
 	width: 100%;
 	max-width: 1200px;
+}
+
+@media (max-width: 768px) {
+	.home-section {
+		padding: 2rem 1rem;
+	}
+
+	.home-section-title {
+		font-size: 2rem;
+	}
+
+	.home-section-subtitle {
+		font-size: 0.9rem;
+	}
 }
 </style>

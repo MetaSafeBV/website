@@ -1,9 +1,9 @@
 <template>
-	<section class="news-section">
-		<div class="news-list-container">
-			<div v-for="news in sortedNewsItems" :key="news.title" class="news-card">
+	<section class="news-section" aria-label="News articles">
+		<div class="news-list-container" role="list">
+			<article v-for="news in sortedNewsItems" :key="news.title" class="news-card" role="listitem">
 				<news-list-item v-bind="news" />
-			</div>
+			</article>
 		</div>
 	</section>
 </template>

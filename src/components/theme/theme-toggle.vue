@@ -69,6 +69,7 @@ function onThemeToggle() {
 
 .theme-toggle:hover {
 	transform: scale(1.1);
+	color: var(--color-primary);
 	box-shadow: var(--shadow-lg);
 	border-color: var(--color-primary);
 }
@@ -83,6 +84,26 @@ function onThemeToggle() {
 
 .theme-toggle:hover svg {
 	transform: rotate(20deg);
+}
+
+.theme-toggle:focus-visible {
+	outline-offset: 2px;
+	outline: 3px solid var(--color-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.theme-toggle,
+	.theme-toggle svg {
+		transition: none;
+	}
+
+	.theme-toggle:hover {
+		transform: none;
+	}
+
+	.theme-toggle:hover svg {
+		transform: none;
+	}
 }
 
 @media (max-width: 768px) {

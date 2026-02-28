@@ -1,9 +1,10 @@
 <template>
 	<div class="home">
+		<a href="#main-content" class="skip-link">Skip to main content</a>
 		<theme-toggle />
-		<section class="hero">
+		<section class="hero" aria-label="Hero section">
 			<div class="container">
-				<img :src="logoSrc" alt="Logo" class="hero-logo" />
+				<img :src="logoSrc" alt="MetaSafe logo" class="hero-logo" />
 				<h1 class="hero-title">
 					We absorb shocks
 					<span class="gradient-text">so you don't have to.</span>
@@ -21,68 +22,70 @@
 				</div>
 			</div>
 		</section>
-		<home-section
-			class="video-highlight"
-			title="Understanding MetaSafe"
-			subtitle="The science and technology behind MetaSafe's advanced protection solutions."
-		>
-			<template #default>
-				<video-section :video-url="videoSrc" />
-			</template>
-		</home-section>
-		<div class="separator" />
-		<home-section
-			title="Key Features"
-			subtitle="Discover the innovative features that make MetaSafe's protection solutions stand out."
-		>
-			<template #default>
-				<div class="features-grid">
-					<feature-card
-						v-for="props in BENEFIT_CARDS"
-						:key="props.title"
-						:title="props.title"
-						:description="props.description"
-						:iconColor="props.iconColor"
-						:icon="props.icon"
-					/>
-				</div>
-			</template>
-		</home-section>
-		<home-section
-			class="leadership-section"
-			title="Leadership"
-			subtitle="MetaSafe is led by experienced co-founders combining academic research excellence with industrial expertise"
-		>
-			<template #default>
-				<div class="leadership-card-container">
-					<leadership-card
-						v-for="leadershipMember in LEADERSHIP_MEMBERS"
-						:key="leadershipMember.name"
-						v-bind="leadershipMember"
-					/>
-				</div>
-				<div class="team-actions">
-					<a :href="constructLocaleWithLocaleSegment(locale, '/team/')" class="btn btn-primary">
-						Meet the Full Team
-					</a>
-				</div>
-			</template>
-		</home-section>
-		<section class="section news-section">
-			<div class="container">
-				<div class="news-content">
-					<div class="news-tagline">
-						<h2 class="news-title">Want to Know More?</h2>
-						<p class="news-text">
-							Stay updated with the latest news, insights, and developments from MetaSafe.
-						</p>
+		<main id="main-content">
+			<home-section
+				class="video-highlight"
+				title="Understanding MetaSafe"
+				subtitle="The science and technology behind MetaSafe's advanced protection solutions."
+			>
+				<template #default>
+					<video-section :video-url="videoSrc" />
+				</template>
+			</home-section>
+			<div class="separator" role="separator" />
+			<home-section
+				title="Key Features"
+				subtitle="Discover the innovative features that make MetaSafe's protection solutions stand out."
+			>
+				<template #default>
+					<div class="features-grid" role="list">
+						<feature-card
+							v-for="props in BENEFIT_CARDS"
+							:key="props.title"
+							:title="props.title"
+							:description="props.description"
+							:iconColor="props.iconColor"
+							:icon="props.icon"
+						/>
 					</div>
-					<a :href="constructLocaleWithLocaleSegment(locale, '/news/')" class="btn btn-primary">
-						Read Our News
-					</a>
+				</template>
+			</home-section>
+			<home-section
+				class="leadership-section"
+				title="Leadership"
+				subtitle="MetaSafe is led by experienced co-founders combining academic research excellence with industrial expertise"
+			>
+				<template #default>
+					<div class="leadership-card-container" role="list">
+						<leadership-card
+							v-for="leadershipMember in LEADERSHIP_MEMBERS"
+							:key="leadershipMember.name"
+							v-bind="leadershipMember"
+						/>
+					</div>
+					<div class="team-actions">
+						<a :href="constructLocaleWithLocaleSegment(locale, '/team/')" class="btn btn-primary">
+							Meet the Full Team
+						</a>
+					</div>
+				</template>
+			</home-section>
+			<section class="section news-section" aria-label="News section">
+				<div class="container">
+					<div class="news-content">
+						<div class="news-tagline">
+							<h2 class="news-title">Want to Know More?</h2>
+							<p class="news-text">
+								Stay updated with the latest news, insights, and developments from MetaSafe.
+							</p>
+						</div>
+						<a :href="constructLocaleWithLocaleSegment(locale, '/news/')" class="btn btn-primary">
+							Read Our News
+						</a>
+					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+		</main>
 	</div>
 </template>
 
@@ -191,6 +194,17 @@ const props = withDefaults(defineProps<HomePageContentProps>(), {
 	font-size: clamp(1rem, 2vw, 1.125rem);
 }
 
+@media (min-width: 769px) and (max-width: 1024px) {
+	.container {
+		max-width: 900px;
+		padding: 0 1.5rem;
+	}
+
+	.hero-title {
+		font-size: clamp(2rem, 4vw, 3rem);
+	}
+}
+
 .hero-actions {
 	display: flex;
 	gap: 1rem;
@@ -208,6 +222,27 @@ const props = withDefaults(defineProps<HomePageContentProps>(), {
 	padding: 0.5rem 1.75rem;
 	transition: all 0.3s ease;
 	border: 1px solid transparent;
+}
+
+.btn:focus-visible {
+	outline: 3px solid var(--vp-c-brand-1);
+	outline-offset: 3px;
+}
+
+.skip-link {
+	left: 0;
+	top: -40px;
+	z-index: 100;
+	color: white;
+	position: absolute;
+	padding: 0.5rem 1rem;
+	text-decoration: none;
+	border-radius: 0 0 0.25rem 0;
+	background: var(--vp-c-brand-1);
+}
+
+.skip-link:focus {
+	top: 0;
 }
 
 .btn-primary {
@@ -232,6 +267,17 @@ const props = withDefaults(defineProps<HomePageContentProps>(), {
 	transform: translateY(-2px);
 	color: var(--color-secondary);
 	border-color: var(--color-secondary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.btn {
+		transition: none;
+	}
+
+	.btn-primary:hover,
+	.btn-secondary:hover {
+		transform: none;
+	}
 }
 
 .video-highlight {
