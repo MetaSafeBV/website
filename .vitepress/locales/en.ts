@@ -37,8 +37,8 @@ function sidebar(): DefaultTheme.SidebarItem[] {
 }
 
 export const en: LocaleSpecificConfig<DefaultTheme.Config> = {
-	title: "Metamaterial Works",
-	description: "Metamaterial Works",
+	title: "MetaSafe",
+	description: "MetaSafe - Advanced Protection Solutions",
 	themeConfig: {
 		logoLink: "/en/",
 		nav: nav(),

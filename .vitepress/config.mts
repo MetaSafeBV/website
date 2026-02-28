@@ -10,7 +10,7 @@ export default defineConfig({
 	outDir: ".vitepress/dist",
 	base: process.env["VP_BASE"] || "/",
 	head: [
-		["link", { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
+		["link", { rel: "icon", type: "image/png", href: "/assets/branding/MetaSafe_logo_3.2.png" }],
 		// Note: remove font-awesome if not used in the project to reduce bundle size
 		// question to Bernard
 		[
@@ -22,7 +22,7 @@ export default defineConfig({
 		],
 	],
 	themeConfig: {
-		logo: "/assets/svg/logo.svg",
+		logo: "/assets/branding/MetaSafe_logo_3.2.png",
 		search: {
 			provider: "local",
 		},
