@@ -1,6 +1,9 @@
 AMSIA
 Corentin
 Coulais
+elastoplastic
 frontmatter
+lightweighting
 metasafe
+nanoprinted
 Spyros
