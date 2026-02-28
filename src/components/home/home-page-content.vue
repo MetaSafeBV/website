@@ -237,8 +237,8 @@ const props = withDefaults(defineProps<HomePageContentProps>(), {
 	position: absolute;
 	padding: 0.5rem 1rem;
 	text-decoration: none;
+	background: transparent;
 	border-radius: 0 0 0.25rem 0;
-	background: var(--vp-c-brand-1);
 }
 
 .skip-link:focus {
