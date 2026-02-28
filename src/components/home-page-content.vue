@@ -1,6 +1,6 @@
 <template>
 	<div class="home">
-		<ThemeToggle />
+		<theme-toggle />
 		<section class="hero">
 			<div class="container">
 				<img :src="logoSrc" alt="Logo" class="hero-logo" />
@@ -27,7 +27,7 @@
 				<p class="section-subtitle">
 					The science and technology behind MetaSafe's advanced protection solutions.
 				</p>
-				<VideoSection :videoUrl="videoSrc" />
+				<video-section :videoUrl="videoSrc" />
 			</div>
 		</section>
 		<section class="section features">
@@ -37,7 +37,7 @@
 					Discover the innovative features that make MetaSafe's protection solutions stand out.
 				</p>
 				<div class="features-grid">
-					<FeatureCard
+					<feature-card
 						v-for="props in BENEFIT_CARDS"
 						:key="props.title"
 						:title="props.title"
@@ -56,7 +56,7 @@
 					industrial expertise
 				</p>
 				<div class="leadership-card-container">
-					<LeadershipCard
+					<leadership-card
 						v-for="leadershipMember in LEADERSHIP_MEMBERS"
 						:key="leadershipMember.name"
 						v-bind="leadershipMember"
@@ -91,13 +91,13 @@
 </template>
 
 <script setup lang="ts">
-import VideoSection from '../components/VideoSection.vue';
-import ThemeToggle from '../components/ThemeToggle.vue';
-import FeatureCard from '../components/FeatureCard.vue';
-import { BENEFIT_CARDS } from './home-data';
-import { LEADERSHIP_MEMBERS } from './team/team';
-import { constructLocaleWithLocaleSegment } from '../utils/pathHelper';
-import LeadershipCard from './team/LeadershipCard.vue';
+import VideoSection from '../components/video-section.vue';
+import ThemeToggle from '../components/theme-toggle.vue';
+import FeatureCard from './feature-card.vue';
+import { BENEFIT_CARDS } from './home-page-data';
+import { LEADERSHIP_MEMBERS } from './team/team-page-data';
+import { constructLocaleWithLocaleSegment } from '../utils/path-helper';
+import LeadershipCard from './team/leadership-card.vue';
 
 // @ts-expect-error - png import
 import logoSrc from '../assets/branding/MetaSafe_logo_3.2.png';

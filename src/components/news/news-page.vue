@@ -2,7 +2,7 @@
 	<section class="news-section">
 		<div class="news-list-container">
 			<div v-for="news in sortedNewsItems" :key="news.title" class="news-card">
-				<NewsListItem v-bind="news" />
+				<news-list-item v-bind="news" />
 			</div>
 		</div>
 	</section>
@@ -11,7 +11,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { NewsItemProps, NewsPageProps } from './news';
-import NewsListItem from './NewsListItem.vue';
+import NewsListItem from './news-list-item.vue';
 
 const props = defineProps<NewsPageProps>();
 

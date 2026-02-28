@@ -4,8 +4,8 @@ title: Team
 ---
 
 <script setup>
-import TeamPage from '../../components/team/TeamPage.vue'
-import { TEAM_MEMBERS } from '../../components/team/team.ts'
+import TeamPageContent from '../../components/team/team-page-content.vue'
+import { TEAM_MEMBERS } from '../../components/team/team-page-data.ts'
 </script>
 
-<TeamPage :teamMembers="TEAM_MEMBERS" />
+<team-page-content :team-members="TEAM_MEMBERS" />

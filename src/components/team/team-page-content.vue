@@ -8,7 +8,7 @@
 			</p>
 		</div>
 		<div class="team-list-container">
-			<TeamMemberCard
+			<team-member-card
 				v-for="member in teamMembers"
 				:key="member.name"
 				:name="member.name"
@@ -23,8 +23,8 @@
 </template>
 
 <script setup lang="ts">
-import { TeamPageProps } from './team';
-import TeamMemberCard from './TeamMemberCard.vue';
+import { TeamPageProps } from './team-page-data';
+import TeamMemberCard from './team-member-card.vue';
 
 defineProps<TeamPageProps>();
 </script>
