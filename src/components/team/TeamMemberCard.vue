@@ -4,10 +4,10 @@
 			<img :src="imageSrc" :alt="imageAlt" />
 		</div>
 		<div class="team-info">
-			<span class="team-header">
+			<div class="team-header">
 				<h3>{{ name }}</h3>
 				<p class="team-role">{{ role }}</p>
-			</span>
+			</div>
 			<p class="team-description">
 				{{ description }}
 			</p>

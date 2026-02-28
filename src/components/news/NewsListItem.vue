@@ -1,29 +1,23 @@
 <template>
-	<div class="news-list-item" @click="onClick">
+	<a class="news-list-item" :href="link">
 		<img :src="imageSrc" :alt="imgAlt" class="news-list-item-image" />
 		<div class="news-list-item-content">
 			<div class="news-list-item-header">
 				<h3 class="news-list-item-title">{{ title }}</h3>
-				<p class="news-list-item-description">{{ description }}</p>
+				<p v-if="description" class="news-list-item-description" v-html="markdownToHtml(description || '')"></p>
 			</div>
 			<p class="news-list-item-created-at">
 				{{ createdAt }}
 			</p>
 		</div>
-	</div>
+	</a>
 </template>
 
 <script setup lang="ts">
+import { markdownToHtml } from '../../utils/markdown-to-html';
 import { NewsItemProps } from './news';
-import { useRouter } from 'vitepress';
 
 const props = defineProps<NewsItemProps>();
-
-const router = useRouter();
-
-function onClick(): void {
-	router.go(props.link);
-}
 </script>
 
 <style scoped>
@@ -33,6 +27,7 @@ function onClick(): void {
 	padding: 1.5rem;
 	cursor: pointer;
 	align-items: center;
+	text-decoration: none;
 	border-radius: 0.75rem;
 	justify-content: center;
 	transition: all 0.3s ease;
