@@ -300,13 +300,6 @@ const props = withDefaults(
 	background: var(--bg-primary);
 }
 
-.team-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	gap: 2rem;
-	margin-top: 3rem;
-}
-
 .leadership-card-container {
 	gap: 1rem;
 	width: 100%;
@@ -391,16 +384,6 @@ const props = withDefaults(
 	.features-grid {
 		grid-template-columns: 1fr;
 		gap: 1.5rem;
-	}
-
-	.team-grid {
-		grid-template-columns: 1fr;
-		gap: 1.5rem;
-	}
-
-	.leadership-card-container {
-		grid-template-columns: 1fr;
-		gap: 2rem;
 	}
 }
 </style>

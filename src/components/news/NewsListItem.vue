@@ -1,6 +1,6 @@
 <template>
 	<div class="news-list-item" @click="onClick">
-		<img :src="imageSrc" alt="News Image" class="news-list-item-image" />
+		<img :src="imageSrc" :alt="imgAlt" class="news-list-item-image" />
 		<div class="news-list-item-content">
 			<div class="news-list-item-header">
 				<h3 class="news-list-item-title">{{ title }}</h3>

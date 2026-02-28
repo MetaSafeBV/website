@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: 🚀 MetaSafe Selected as Hello Tomorrow Deep Tech Pioneer 2026
-created_at: 27-02-2026
+created_at: 2026-02-27
 ---
 
 # 🚀 MetaSafe Selected as Hello Tomorrow Deep Tech Pioneer 2026
