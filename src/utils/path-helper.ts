@@ -1,3 +1,5 @@
+import { withBase } from 'vitepress';
+
 export function constructLocaleWithLocaleSegment(locale: string, path: string): string {
-	return `/${locale}/${path}`.replaceAll('//', '/');
+	return withBase(`/${locale}/${path}`.replaceAll('//', '/'));
 }
