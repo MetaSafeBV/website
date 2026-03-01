@@ -28,7 +28,7 @@ export const en: LocaleSpecificConfig<DefaultTheme.Config> = {
 	title: 'MetaSafe',
 	description: 'MetaSafe - Advanced Protection Solutions',
 	themeConfig: {
-		logoLink: '/en/',
+		logoLink: '/website/en/',
 		sidebar: sidebar(),
 		docFooter: {
 			prev: 'Previous page',

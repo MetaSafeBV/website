@@ -1,6 +1,7 @@
 {
 	"name": "MetaSafe - Advanced Protection Solutions",
 	"description": "MetaSafe BV - We absorb shocks so you don't have to",
+	"publicPath": "/",
 	"background_color": "#ffffff",
 	"display": "standalone",
 	"icons": [

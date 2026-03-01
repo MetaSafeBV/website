@@ -1,6 +1,11 @@
 import { defineConfig } from 'vitepress';
 import { en } from './locales/en';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+export const VP_BASE = process.env['VP_BASE'] || '/website/';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -9,7 +14,7 @@ export default defineConfig({
 	metaChunk: true,
 	lastUpdated: false,
 	outDir: 'dist',
-	base: process.env['VP_BASE'] || '/',
+	base: VP_BASE,
 	sitemap: {
 		// TODO(Bence): Add real hostname here
 		hostname: '',
@@ -28,7 +33,7 @@ export default defineConfig({
 			{
 				rel: 'icon',
 				type: 'image/png',
-				href: '/assets/branding/MetaSafe_logo_3.2.png',
+				href: `${VP_BASE}assets/branding/MetaSafe_logo_3.2.png`,
 			},
 		],
 		[
@@ -40,7 +45,7 @@ export default defineConfig({
 		],
 		['meta', { name: 'theme-color', content: '#5b21b6' }],
 		['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }],
-		['link', { rel: 'manifest', href: '/manifest.json' }],
+		['link', { rel: 'manifest', href: `${VP_BASE}manifest.json` }],
 	],
 	themeConfig: {
 		logo: '/assets/branding/MetaSafe_logo_3.2.png',
