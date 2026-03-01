@@ -1,5 +1,9 @@
 import { type LeadershipCardProps } from '~/components/team/leadership-card';
 
+import Bernard from '~/assets/team/Bernard_C12_0740_head.jpg';
+import Corentin from '~/assets/team/Corentin_C12_0783_profile.jpg';
+import Spyros from '~/assets/team/Spyros_head.jpg';
+
 export interface TeamMemberCardProps {
 	imageSrc: string;
 	imageAlt: string;
@@ -22,21 +26,21 @@ export const LEADERSHIP_MEMBERS = [
 		name: 'Bernard Ennis',
 		role: 'Co-Founder & CEO',
 		expertise: '30+ years industrial experience in Automotive, Marine and Electrical sectors',
-		imageSrc: '/assets/team/Bernard_C12_0740_head.jpg',
+		imageSrc: Bernard,
 		imageAlt: 'Bernard Ennis, Co-Founder and CEO of MetaSafe',
 	},
 	{
 		name: 'Corentin Coulais',
 		role: 'Co-Founder & CSO',
 		expertise: 'Associate Professor, University of Amsterdam',
-		imageSrc: '/assets/team/Corentin_C12_0783_profile.jpg',
+		imageSrc: Corentin,
 		imageAlt: 'Corentin Coulais, Co-Founder and Chief Scientific Officer of MetaSafe',
 	},
 ] as const satisfies LeadershipCardProps[];
 
 export const TEAM_MEMBERS = [
 	{
-		imageSrc: '/assets/team/Bernard_C12_0740_head.jpg',
+		imageSrc: Bernard,
 		imageAlt: 'Bernard Ennis, Co-Founder and CEO',
 		name: 'Bernard',
 		role: 'Co-Founder & CEO',
@@ -48,7 +52,7 @@ export const TEAM_MEMBERS = [
 		},
 	},
 	{
-		imageSrc: '/assets/team/Corentin_C12_0783_profile.jpg',
+		imageSrc: Corentin,
 		imageAlt: 'Corentin Coulais, Co-Founder and Chief Scientific Officer',
 		name: 'Corentin',
 		role: 'Co-Founder & CSO',
@@ -61,7 +65,7 @@ export const TEAM_MEMBERS = [
 		},
 	},
 	{
-		imageSrc: '/assets/team/Spyros_head.jpg',
+		imageSrc: Spyros,
 		imageAlt: 'Spyros Fyllaridis, Mechanical Engineer',
 		name: 'Spyros',
 		role: 'Mechanical Engineer',
