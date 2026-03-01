@@ -8,7 +8,7 @@ export default defineConfig({
 	cleanUrls: true,
 	metaChunk: true,
 	lastUpdated: false,
-	outDir: '.vitepress/dist',
+	outDir: 'dist',
 	base: process.env['VP_BASE'] || '/',
 	sitemap: {
 		// TODO(Bence): Add real hostname here
