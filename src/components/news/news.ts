@@ -1,5 +1,5 @@
 import { withBase } from 'vitepress';
-import MetaSafeSelected26ImgSrc from '~/assets/news/Metamaterial_Works-Has-Been-Selected-As.png';
+import MetaSafeSelected26ImgSrc from '~/public/assets/news/Metamaterial_Works-Has-Been-Selected-As.png';
 
 export interface NewsItemProps {
 	title: string;

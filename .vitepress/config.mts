@@ -10,7 +10,6 @@ export const VP_BASE = process.env['VP_BASE'] || '/website/';
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
 	srcDir: './src',
-	publicDir: '../public',
 	cleanUrls: true,
 	metaChunk: true,
 	lastUpdated: false,
@@ -35,7 +34,7 @@ export default defineConfig({
 				href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
 			},
 		],
-		['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.png' }],
+		['link', { rel: 'icon', type: 'image/png', href: `${VP_BASE}logo.png` }],
 		['meta', { name: 'theme-color', content: '#5b21b6' }],
 		['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }],
 		['link', { rel: 'manifest', href: `${VP_BASE}manifest.json` }],

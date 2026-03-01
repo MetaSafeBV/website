@@ -1,8 +1,8 @@
 import { type LeadershipCardProps } from '~/components/team/leadership-card';
 
-import BernardEnnisSrc from '~/assets/team/Bernard_C12_0740_head.jpg';
-import CorentinCoulaisSrc from '~/assets/team/Corentin_C12_0783_profile.jpg';
-import SpyrosFyllaridisSrc from '~/assets/team/Spyros_head.jpg';
+import BernardEnnisSrc from '~/public/assets/team/Bernard_C12_0740_head.jpg';
+import CorentinCoulaisSrc from '~/public/assets/team/Corentin_C12_0783_profile.jpg';
+import SpyrosFyllaridisSrc from '~/public/assets/team/Spyros_head.jpg';
 
 export interface TeamMemberCardProps {
 	imageSrc: string;
