@@ -10,14 +10,14 @@ export const VP_BASE = process.env['VP_BASE'] || '/website/';
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
 	srcDir: './src',
+	publicDir: '../public',
 	cleanUrls: true,
 	metaChunk: true,
 	lastUpdated: false,
 	outDir: 'dist',
 	base: VP_BASE,
 	sitemap: {
-		// TODO(Bence): Add real hostname here
-		hostname: '',
+		hostname: 'https://metasafebv.github.io/website/',
 	},
 	vite: {
 		resolve: {

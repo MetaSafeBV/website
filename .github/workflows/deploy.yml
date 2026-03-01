@@ -45,7 +45,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build with VitePress
-        run: pnpm docs:build
+        run: pnpm docs:build:analyze
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
