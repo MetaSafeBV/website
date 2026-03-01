@@ -98,11 +98,9 @@ import { LEADERSHIP_MEMBERS } from '~/components/team/team-page-data';
 import { constructLocaleWithLocaleSegment } from '~/utils/path-helper';
 import LeadershipCard from '~/components/team/leadership-card.vue';
 import { SupportedLocales } from '~vitepress/theme';
-import { withBase } from 'vitepress';
 import HomeSection from './home-section.vue';
-
-const logoSrc = withBase('/assets/branding/MetaSafe_logo_3.2.png');
-const videoSrc = withBase('/assets/video/AMSIA.mp4');
+import logoSrc from '~/assets/branding/MetaSafe_logo_3.2.png';
+import videoSrc from '~/assets/video/AMSIA.mp4';
 
 const props = withDefaults(defineProps<HomePageContentProps>(), {
 	locale: () => SupportedLocales.EN,
