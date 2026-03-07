@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-export const VP_BASE = process.env['VP_BASE'] || '/website/';
+export const VP_BASE = process.env['VP_BASE'] || '/';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -16,7 +16,7 @@ export default defineConfig({
 	outDir: 'dist',
 	base: VP_BASE,
 	sitemap: {
-		hostname: 'https://metasafebv.github.io/website/',
+		hostname: 'https://metamaterialworks.com',
 	},
 	vite: {
 		resolve: {
