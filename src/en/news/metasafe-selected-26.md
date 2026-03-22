@@ -2,6 +2,8 @@
 layout: doc
 title: 🚀 MetaSafe Selected as Hello Tomorrow Deep Tech Pioneer 2026
 created_at: 2026-02-27
+description: We're thrilled to announce that **MetaSafe** has been selected as one of the prestigious **Hello Tomorrow Deep Tech Pioneers** for 2026!
+imgPath: /assets/news/Metamaterial_Works-Has-Been-Selected-As.png
 ---
 
 <script setup lang="ts">

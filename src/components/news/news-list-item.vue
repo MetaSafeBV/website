@@ -1,6 +1,6 @@
 <template>
 	<a class="news-list-item" :href="link" :aria-label="`Read article: ${title}`">
-		<img :src="imageSrc" :alt="imgAlt" class="news-list-item-image" loading="lazy" />
+		<img :src="imgPath" :alt="title" class="news-list-item-image" loading="lazy" />
 		<div class="news-list-item-content">
 			<div class="news-list-item-header">
 				<h3 class="news-list-item-title">{{ title }}</h3>
@@ -20,13 +20,8 @@
 <script setup lang="ts">
 import { markdownToHtml } from '~/utils/markdown-to-html';
 import { type NewsItemProps } from '~/components/news/news';
-import { computed } from 'vue';
 
-const props = defineProps<NewsItemProps>();
-
-const imgAlt = computed<string>(() => {
-	return props.imgAlt || `${props.title} thumbnail`;
-});
+defineProps<NewsItemProps>();
 </script>
 
 <style scoped>
