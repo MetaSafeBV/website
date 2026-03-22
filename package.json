@@ -14,6 +14,7 @@
 	},
 	"type": "module",
 	"scripts": {
+		"news:new": "npx tsx scripts/new-news.ts",
 		"generate:news": "npx tsx scripts/generate-news.ts",
 		"docs:build": "vitepress build",
 		"docs:build:analyze": "vitepress build --analyze",
