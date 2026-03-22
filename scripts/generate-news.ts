@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const NEWS_DIR = path.resolve(__dirname, '../src/en/news');
-const OUTPUT_FILE = path.resolve(__dirname, '../src/generated/news.json');
+const OUTPUT_FILE = path.resolve(__dirname, '../src/en/generated/news.json');
 
 interface NewsFrontmatter {
 	title: string;
@@ -87,4 +87,4 @@ const news: NewsItem[] = files
 fs.mkdirSync(path.dirname(OUTPUT_FILE), { recursive: true });
 fs.writeFileSync(OUTPUT_FILE, JSON.stringify({ news }, null, '\t'));
 
-console.log(`Generated ${news.length} news items → src/generated/news.json`);
+console.log(`Generated ${news.length} news items → src/en/generated/news.json`);
