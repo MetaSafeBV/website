@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-export const VP_BASE = process.env['VP_BASE'] || '/website/';
+export const VP_BASE = process.env['VP_BASE'] || '/';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({

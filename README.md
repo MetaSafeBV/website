@@ -65,3 +65,41 @@ Locale directories (e.g. `en/`, `fr/`) sit directly inside `src/`. Each one hold
 `.md` files map directly to pages on the site. The filename becomes part of the URL — so `src/en/getting-started.md` becomes `/en/getting-started`.
 
 Subdirectories create nested sections. A folder like `advanced/` groups related pages together and typically appears as a collapsible section in the sidebar. The folder name is used as the section label.
+
+### Adding a news article
+
+News articles live in `src/en/news/`.
+
+The filename becomes the URL slug — `my-article.md` → `/en/news/my-article`.
+
+Every news file needs a frontmatter block at the top. This will be used to create a new entry for the list on the main page.
+
+```md
+---
+layout: doc
+title: Your Article Title
+created_at: 2026-03-15
+description: A short summary of the article. Supports **markdown**.
+imgPath: /assets/news/your-image.png
+---
+```
+
+| Field         | Required | Description                                                                                                    |
+| ------------- | -------- | -------------------------------------------------------------------------------------------------------------- |
+| `layout`      | yes      | Always set to `doc`.                                                                                           |
+| `title`       | yes      | The article title. Shown on the news list and the article page.                                                |
+| `created_at`  | yes      | Publication date in `YYYY-MM-DD` format.                                                                       |
+| `description` | no       | Short summary shown in the news list. Falls back to the first paragraph.                                       |
+| `imgPath`     | no       | Path to a thumbnail image. Place images in `src/public/assets/news/`. Falls back to `/assets/news/{slug}.png`. |
+
+To scaffold a new one, run:
+
+```bash
+pnpm news:new "Your Article Title"
+```
+
+This creates a file in `src/en/news/` with the frontmatter pre-filled and today's date. The filename is derived from the title — `"Your Article Title"` → `src/en/news/your-article-title`
+
+After the frontmatter, write the article body in regular Markdown.
+
+The news list is generated automatically. Run `pnpm generate:news` to rebuild it — this also runs automatically on pre-commit.

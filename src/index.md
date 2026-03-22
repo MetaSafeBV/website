@@ -9,6 +9,6 @@ import { useRouter } from 'vitepress';
 const router = useRouter();
 
 onMounted(() => {
-  router.go('/website/en/');
+  router.go('/en/');
 });
 </script>
