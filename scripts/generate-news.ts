@@ -1,10 +1,10 @@
-import fs from "node:fs";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const NEWS_DIR = path.resolve(__dirname, "../src/en/news");
-const OUTPUT_FILE = path.resolve(__dirname, "../src/generated/news.json");
+const NEWS_DIR = path.resolve(__dirname, '../src/en/news');
+const OUTPUT_FILE = path.resolve(__dirname, '../src/generated/news.json');
 
 interface NewsFrontmatter {
 	title: string;
@@ -24,62 +24,53 @@ interface NewsItem {
 
 function parseFrontmatter(content: string): NewsFrontmatter {
 	const match = content.match(/^---\n([\s\S]*?)\n---/);
+
 	if (!match) {
-		throw new Error("No frontmatter found");
+		throw new Error('No frontmatter found');
 	}
 
 	const data: Record<string, string> = {};
-
-	const lines = match?.[1]?.split("\n");
+	const lines: string[] = match?.[1]?.split('\n') || [];
 
 	if (!lines || lines.length === 0) {
-		throw new Error("Cannot access match data or split text into lines");
+		throw new Error('Cannot access match data or split text into lines');
 	}
 
 	for (const line of lines) {
-		const colonIndex = line.indexOf(":");
+		const colonIndex = line.indexOf(':');
 
 		if (colonIndex > 0) {
-			data[line.slice(0, colonIndex).trim()] = line
-				.slice(colonIndex + 1)
-				.trim();
+			data[line.slice(0, colonIndex).trim()] = line.slice(colonIndex + 1).trim();
 		}
 	}
-	return data as NewsFrontmatter;
+
+	return data as unknown as NewsFrontmatter;
 }
 
 function formatDisplayDate(dateString: string): string {
-	return new Date(dateString).toLocaleDateString("en-US", {
-		year: "numeric",
-		month: "long",
+	return new Date(dateString).toLocaleDateString('en-US', {
+		year: 'numeric',
+		month: 'long',
 	});
 }
 
 function extractDescription(content: string): string {
-	const body = content.replace(/^---[\s\S]*?---/, "");
+	const body = content.replace(/^---[\s\S]*?---/, '');
 	const paragraphs = body
-		.split("\n")
-		.filter(
-			(l) =>
-				l.trim() &&
-				!l.startsWith("#") &&
-				!l.startsWith("<") &&
-				!l.startsWith("!"),
-		)
+		.split('\n')
+		.filter((l) => l.trim() && !l.startsWith('#') && !l.startsWith('<') && !l.startsWith('!'))
 		.map((l) => l.trim());
 
-	return paragraphs[0] || "";
+	return paragraphs[0] || '';
 }
 
-const files = fs
-	.readdirSync(NEWS_DIR)
-	.filter((f) => f.endsWith(".md") && f !== "index.md");
+const files = fs.readdirSync(NEWS_DIR).filter((f) => f.endsWith('.md') && f !== 'index.md');
 
 const news: NewsItem[] = files
 	.map((file) => {
-		const content = fs.readFileSync(path.join(NEWS_DIR, file), "utf-8");
+		const content = fs.readFileSync(path.join(NEWS_DIR, file), 'utf-8');
 		const fm = parseFrontmatter(content);
-		const slug = file.replace(".md", "");
+		const slug = file.replace('.md', '');
 
 		return {
 			title: fm.title,
@@ -90,13 +81,10 @@ const news: NewsItem[] = files
 			creationDate: fm.created_at,
 		};
 	})
-	.sort(
-		(a, b) =>
-			new Date(b.creationDate).getTime() - new Date(a.creationDate).getTime(),
-	);
+	.sort((a, b) => new Date(b.creationDate).getTime() - new Date(a.creationDate).getTime());
 
 // Ensure output directory exists
 fs.mkdirSync(path.dirname(OUTPUT_FILE), { recursive: true });
-fs.writeFileSync(OUTPUT_FILE, JSON.stringify({ news }, null, "\t"));
+fs.writeFileSync(OUTPUT_FILE, JSON.stringify({ news }, null, '\t'));
 
 console.log(`Generated ${news.length} news items → src/generated/news.json`);
