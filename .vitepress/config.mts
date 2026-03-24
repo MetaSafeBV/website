@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress';
-import { en } from './locales/en';
+import { createEnLocale } from './locales/en';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -52,7 +52,7 @@ export default defineConfig({
 		root: {
 			label: 'English',
 			lang: 'en-US',
-			...en,
+			...createEnLocale(),
 		},
 	},
 });

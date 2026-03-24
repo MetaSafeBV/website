@@ -6,8 +6,8 @@ function sidebar(): DefaultTheme.SidebarItem[] {
 		locale: 'en',
 		srcDir: 'src',
 		collapsed: true,
-		useFrontmatterTitle: true,
-		ignoreList: ['Home.vue', 'home-data.ts', 'news'],
+		useFrontmatterTitle: false,
+		ignoreList: ['Home.vue', 'home-data.ts', 'news', 'generated'],
 	});
 
 	const newsItems = generateSidebar({
@@ -24,27 +24,29 @@ function sidebar(): DefaultTheme.SidebarItem[] {
 	return [...mainItems, ...newsItems];
 }
 
-export const en: LocaleSpecificConfig<DefaultTheme.Config> = {
-	title: 'MetaSafe',
-	description: 'MetaSafe - Advanced Protection Solutions',
-	themeConfig: {
-		logoLink: '/en/',
-		sidebar: sidebar(),
-		docFooter: {
-			prev: 'Previous page',
-			next: 'Next page',
+export function createEnLocale(): LocaleSpecificConfig<DefaultTheme.Config> {
+	return {
+		title: 'MetaSafe',
+		description: 'MetaSafe - Advanced Protection Solutions',
+		themeConfig: {
+			logoLink: '/en/',
+			sidebar: sidebar(),
+			docFooter: {
+				prev: 'Previous page',
+				next: 'Next page',
+			},
+			outline: {
+				label: 'On this page',
+			},
+			lastUpdated: {
+				text: 'Last updated',
+			},
+			langMenuLabel: 'Change language',
+			returnToTopLabel: 'Return to top',
+			sidebarMenuLabel: 'Menu',
+			darkModeSwitchLabel: 'Appearance',
+			lightModeSwitchTitle: 'Switch to light theme',
+			darkModeSwitchTitle: 'Switch to dark theme',
 		},
-		outline: {
-			label: 'On this page',
-		},
-		lastUpdated: {
-			text: 'Last updated',
-		},
-		langMenuLabel: 'Change language',
-		returnToTopLabel: 'Return to top',
-		sidebarMenuLabel: 'Menu',
-		darkModeSwitchLabel: 'Appearance',
-		lightModeSwitchTitle: 'Switch to light theme',
-		darkModeSwitchTitle: 'Switch to dark theme',
-	},
-};
+	};
+}

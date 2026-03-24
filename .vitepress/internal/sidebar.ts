@@ -174,6 +174,7 @@ function sortFileInfos(
 		if (a.isDirectory && !b.isDirectory) {
 			return -1;
 		}
+
 		if (!a.isDirectory && b.isDirectory) {
 			return 1;
 		}
@@ -264,9 +265,7 @@ function buildSidebarItems(
 				sidebarItem.items = childItems;
 			}
 
-			if (hasIndexMdFile || childItems.length > 0) {
-				items.push(sidebarItem);
-			}
+			items.push(sidebarItem);
 		} else if (info.name.endsWith('.md') && info.name.toLowerCase() !== 'index.md') {
 			// Handle markdown file (skip index.md as it's handled by parent)
 			const fileName = info.name.replace(/\.md$/i, '');
