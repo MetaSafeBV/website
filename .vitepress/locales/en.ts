@@ -25,8 +25,8 @@ function sidebar(): DefaultTheme.SidebarItem[] {
 }
 
 export const en: LocaleSpecificConfig<DefaultTheme.Config> = {
-	title: 'MetaSafe',
-	description: 'MetaSafe - Advanced Protection Solutions',
+	title: 'VYTL',
+	description: 'VYTL Works BV - Advanced Protection Solutions',
 	themeConfig: {
 		logoLink: '/en/',
 		sidebar: sidebar(),

@@ -4,17 +4,20 @@
 		<theme-toggle />
 		<section class="hero" aria-label="Hero section">
 			<div class="container">
-				<img :src="logoSrc" alt="MetaSafe logo" class="hero-logo" />
+				<img :src="logoSrc" alt="VYTL Works logo" class="hero-logo" />
 				<h1 class="hero-title">
 					We absorb shocks
 					<span class="gradient-text">so you don't have to.</span>
 				</h1>
 				<p class="hero-subtitle">
-					MetaSafe BV is a wholly owned subsidiary of MetaMaterial Works BV.
+					VYTL Works BV is a wholly owned subsidiary of MetaMaterial Works BV.
 				</p>
 				<div class="hero-actions">
 					<a :href="constructLocaleWithLocaleSegment(locale, '/product/')" class="btn btn-primary">
 						Product
+					</a>
+					<a :href="constructLocaleWithLocaleSegment(locale, '/technology/')" class="btn btn-secondary">
+						Technology
 					</a>
 					<a :href="constructLocaleWithLocaleSegment(locale, '/about/')" class="btn btn-secondary">
 						About Us
@@ -25,8 +28,8 @@
 		<main id="main-content">
 			<home-section
 				class="video-highlight"
-				title="Understanding MetaSafe"
-				subtitle="The science and technology behind MetaSafe's advanced protection solutions."
+				title="Understanding MetaSafe™"
+				subtitle="The science and technology behind MetaSafe™'s advanced protection solutions."
 			>
 				<template #default>
 					<video-section :video-url="videoSrc" />
@@ -35,7 +38,7 @@
 			<div class="separator" role="separator" />
 			<home-section
 				title="Key Features"
-				subtitle="Discover the innovative features that make MetaSafe's protection solutions stand out."
+				subtitle="Discover the innovative features that make VYTL's protection solutions stand out."
 			>
 				<template #default>
 					<div class="features-grid" role="list">
@@ -53,7 +56,7 @@
 			<home-section
 				class="leadership-section"
 				title="Leadership"
-				subtitle="MetaSafe is led by experienced co-founders combining academic research excellence with industrial expertise"
+				subtitle="VYTL Works is led by experienced co-founders combining academic research excellence with industrial expertise"
 			>
 				<template #default>
 					<div class="leadership-card-container" role="list">
@@ -76,7 +79,7 @@
 						<div class="news-tagline">
 							<h2 class="news-title">Want to Know More?</h2>
 							<p class="news-text">
-								Stay updated with the latest news, insights, and developments from MetaSafe.
+								Stay updated with the latest news, insights, and developments from VYTL Works.
 							</p>
 						</div>
 						<a :href="constructLocaleWithLocaleSegment(locale, '/news/')" class="btn btn-primary">
@@ -99,7 +102,7 @@ import { constructLocaleWithLocaleSegment } from '~/utils/path-helper';
 import LeadershipCard from '~/components/team/leadership-card.vue';
 import { SupportedLocales } from '~vitepress/theme';
 
-import logoSrc from '~/assets/branding/MetaSafe_logo_3.2.png';
+import logoSrc from '~/assets/branding/VYTL_logo_red.png';
 import videoSrc from '~/assets/video/AMSIA.mp4';
 import HomeSection from './home-section.vue';
 
@@ -167,7 +170,7 @@ const props = withDefaults(defineProps<HomePageContentProps>(), {
 }
 
 .hero-logo {
-	width: 200px;
+	width: clamp(280px, 40vw, 480px);
 	height: auto;
 }
 

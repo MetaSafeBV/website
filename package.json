@@ -1,16 +1,16 @@
 {
-	"name": "metasafe-bv-website",
+	"name": "vytl-works-bv-website",
 	"version": "0.0.1",
 	"private": true,
-	"description": "Main repository for the Metamaterial Works website.",
+	"description": "Main repository for the VYTL Works website.",
 	"bugs": {
-		"url": "https://github.com/MetaSafeBV/website/issues"
+		"url": "https://github.com/vytlworks/website/issues"
 	},
 	"license": "Proprietary License",
-	"author": "MetaSafe BV",
+	"author": "VYTL Works BV",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/MetaSafeBV/website.git"
+		"url": "https://github.com/vytlworks/website.git"
 	},
 	"type": "module",
 	"scripts": {

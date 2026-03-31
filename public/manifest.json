@@ -1,23 +1,17 @@
 {
-	"name": "MetaSafe - Advanced Protection Solutions",
-	"description": "MetaSafe BV - We absorb shocks so you don't have to",
+	"name": "VYTL Works BV - Advanced Protection Solutions",
+	"description": "VYTL Works BV - We absorb shocks so you don't have to",
 	"background_color": "#ffffff",
 	"display": "standalone",
 	"icons": [
 		{
-			"src": "/assets/branding/MetaSafe_logo_3.2.png",
-			"sizes": "192x192",
-			"type": "image/png",
-			"purpose": "any maskable"
-		},
-		{
-			"src": "/assets/branding/MetaSafe_logo_3.2.png",
-			"sizes": "512x512",
-			"type": "image/png",
+			"src": "/logo.svg",
+			"sizes": "any",
+			"type": "image/svg+xml",
 			"purpose": "any maskable"
 		}
 	],
-	"short_name": "MetaSafe",
+	"short_name": "VYTL Works",
 	"start_url": "/",
 	"theme_color": "#5b21b6"
 }

@@ -27,8 +27,8 @@ export default defineConfig({
 			'link',
 			{
 				rel: 'icon',
-				type: 'image/png',
-				href: '/assets/branding/MetaSafe_logo_3.2.png',
+				type: 'image/svg+xml',
+				href: '/logo.svg',
 			},
 		],
 		[
@@ -43,7 +43,7 @@ export default defineConfig({
 		['link', { rel: 'manifest', href: '/manifest.json' }],
 	],
 	themeConfig: {
-		logo: '/assets/branding/MetaSafe_logo_3.2.png',
+		logo: '/logo.svg',
 		search: {
 			provider: 'local',
 		},

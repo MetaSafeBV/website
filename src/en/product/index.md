@@ -3,7 +3,7 @@ layout: doc
 title: Product
 ---
 
-# MetaSafe Technology
+# MetaSafe™ Technology
 
 ## Revolutionary Dissipative Metamaterials for BEV Battery Protection
 
@@ -57,4 +57,4 @@ The outcome will determine whether the technology can serve as a commercially vi
 
 ## Ready for Industry Integration
 
-MetaSafe technology is designed from the ground up for real-world automotive applications, with a focus on scalability, cost-effectiveness, and compatibility with existing manufacturing infrastructure.
+MetaSafe™ technology is designed from the ground up for real-world automotive applications, with a focus on scalability, cost-effectiveness, and compatibility with existing manufacturing infrastructure.
