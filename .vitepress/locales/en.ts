@@ -40,5 +40,5 @@ export const en: LocaleSpecificConfig<DefaultTheme.Config> = {
 		lastUpdated: {
 			text: 'Last updated',
 		},
-	};
-}
+	},
+};

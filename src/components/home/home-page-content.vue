@@ -16,7 +16,10 @@
 					<a :href="constructLocaleWithLocaleSegment(locale, '/product/')" class="btn btn-primary">
 						Product
 					</a>
-					<a :href="constructLocaleWithLocaleSegment(locale, '/technology/')" class="btn btn-secondary">
+					<a
+						:href="constructLocaleWithLocaleSegment(locale, '/technology/')"
+						class="btn btn-secondary"
+					>
 						Technology
 					</a>
 					<a :href="constructLocaleWithLocaleSegment(locale, '/about/')" class="btn btn-secondary">
