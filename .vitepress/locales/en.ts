@@ -6,8 +6,8 @@ function sidebar(): DefaultTheme.SidebarItem[] {
 		locale: 'en',
 		srcDir: 'src',
 		collapsed: true,
-		useFrontmatterTitle: true,
-		ignoreList: ['Home.vue', 'home-data.ts', 'news'],
+		useFrontmatterTitle: false,
+		ignoreList: ['Home.vue', 'home-data.ts', 'news', 'generated'],
 	});
 
 	const newsItems = generateSidebar({
@@ -40,11 +40,5 @@ export const en: LocaleSpecificConfig<DefaultTheme.Config> = {
 		lastUpdated: {
 			text: 'Last updated',
 		},
-		langMenuLabel: 'Change language',
-		returnToTopLabel: 'Return to top',
-		sidebarMenuLabel: 'Menu',
-		darkModeSwitchLabel: 'Appearance',
-		lightModeSwitchTitle: 'Switch to light theme',
-		darkModeSwitchTitle: 'Switch to dark theme',
-	},
-};
+	};
+}
