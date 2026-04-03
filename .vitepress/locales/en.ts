@@ -25,7 +25,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
 }
 
 export const en: LocaleSpecificConfig<DefaultTheme.Config> = {
-	title: 'VYTL',
+	title: 'VYTL Works',
 	description: 'VYTL Works BV - Advanced Protection Solutions',
 	themeConfig: {
 		logoLink: '/en/',
