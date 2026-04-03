@@ -13,7 +13,7 @@ Shock absorption is a crucial function designed to protect objects, structures, 
 
 Structures traditionally used in the automotive industry, e.g., crash cans or structures based on arches, are either stiff or dissipative but not both. Our technology, **MetaSafe™** (patent WO2025061777A1, developed in the NWO TTW project 17883 in collaboration with the University of Amsterdam and Tata Steel, and recently featured in Nature), combines high stiffness and high dissipative capacity.
 
-The metamaterial is **100 times stiffer** and **20 times more dissipative** than current solutions used for shielding batteries.
+The metamaterial is **100 times stiffer** and up to **20 times more dissipative** than current solutions used for shielding batteries.
 
 ![Dissipative Metamaterials](/assets/figures/dissipative-metamaterials-figure.png)
 _Figure 1: (a) Our dissipative metamaterials. In contrast with traditional structures and metamaterials, which have an inherent trade-off between stiffness and dissipation, our dissipative metamaterials exploit a particular occurrence of elastoplastic buckling, which make them buckle in a controlled sequence upon compression or shocks (b). (c) As a result, they exhibit an exceptionally high dissipation to weight ratio, which beats all traditional structures by orders of magnitude._

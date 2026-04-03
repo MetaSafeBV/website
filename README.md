@@ -1,6 +1,6 @@
-# Metamaterial Works Website
+# VYTL Works Website
 
-Main repository for the Metamaterial Works website.
+Main repository for the VYTL Works website.
 
 ## Development
 

@@ -1,5 +1,5 @@
 <template>
-	<div class="metasafe-split-home-page">
+	<div class="vytl-works-split-home-page">
 		<split-section @click="onClick(ProductEnum.Product1)" />
 		<split-section @click="onClick(ProductEnum.Product2)" />
 	</div>
@@ -25,7 +25,7 @@ function onClick(product: ProductEnum): void {
 </script>
 
 <style scoped>
-.metasafe-split-home-page {
+.vytl-works-split-home-page {
 	width: 100%;
 	height: 100%;
 	display: flex;

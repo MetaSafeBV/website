@@ -2,8 +2,8 @@
 layout: doc
 title: 🚀 VYTL Works selected as Hello Tomorrow Deep Tech Pioneer 2026
 created_at: 2026-02-27
-description: We're thrilled to announce that **MetaSafe** has been selected as one of the prestigious **Hello Tomorrow Deep Tech Pioneers** for 2026!
-imgPath: /assets/news/Metamaterial_Works-Has-Been-Selected-As.png
+description: We're thrilled to announce that **VYTL Works** has been selected as one of the prestigious **Hello Tomorrow Deep Tech Pioneers** for 2026!
+imgPath: /assets/news/VYTL_Works-Has-Been-Selected-As.png
 ---
 
 <script setup lang="ts">
@@ -41,7 +41,7 @@ As Deep Tech Pioneers, we've advanced to the second stage of the Hello Tomorrow 
 
 ### About Our Technology
 
-Our patented yield-buckling mechanical metamaterial architecture represents a paradigm shift in protection technology. Unlike traditional materials that trade stiffness for energy absorption, MetaSafe™'s technology achieves both - delivering materials that are **100 times stiffer** and **20 times more dissipative** than current solutions.
+Our patented yield-buckling mechanical metamaterial architecture represents a paradigm shift in protection technology. Unlike traditional materials that trade stiffness for energy absorption, the MetaSafe™ technology achieves both; delivering materials that are **100 times stiffer** and **20 times more dissipative** than current solutions.
 
 This recognition from Hello Tomorrow reinforces our mission to bring revolutionary protection technology from laboratory research to real-world applications, starting with next-generation battery enclosures for electric vehicles.
 
