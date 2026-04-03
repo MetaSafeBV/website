@@ -26,8 +26,8 @@ function sidebar(): DefaultTheme.SidebarItem[] {
 
 export function createEnLocale(): LocaleSpecificConfig<DefaultTheme.Config> {
 	return {
-		title: 'MetaSafe',
-		description: 'MetaSafe - Advanced Protection Solutions',
+		title: 'VYTL Works',
+		description: 'VYTL Works BV - Advanced Protection Solutions',
 		themeConfig: {
 			logoLink: '/en/',
 			sidebar: sidebar(),
@@ -41,12 +41,6 @@ export function createEnLocale(): LocaleSpecificConfig<DefaultTheme.Config> {
 			lastUpdated: {
 				text: 'Last updated',
 			},
-			langMenuLabel: 'Change language',
-			returnToTopLabel: 'Return to top',
-			sidebarMenuLabel: 'Menu',
-			darkModeSwitchLabel: 'Appearance',
-			lightModeSwitchTitle: 'Switch to light theme',
-			darkModeSwitchTitle: 'Switch to dark theme',
 		},
 	};
 }

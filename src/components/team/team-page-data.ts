@@ -26,15 +26,15 @@ export const LEADERSHIP_MEMBERS = [
 		name: 'Bernard Ennis',
 		role: 'Co-Founder & CEO',
 		expertise: '30+ years industrial experience in Automotive, Marine and Electrical sectors',
-		imageSrc: BernardEnnisSrc,
-		imageAlt: 'Bernard Ennis, Co-Founder and CEO of MetaSafe',
+		imageSrc: '/assets/team/Bernard_C12_0740_head.jpg',
+		imageAlt: 'Bernard Ennis, Co-Founder and CEO of VYTL Works BV',
 	},
 	{
 		name: 'Corentin Coulais',
 		role: 'Co-Founder & CSO',
 		expertise: 'Associate Professor, University of Amsterdam',
-		imageSrc: CorentinCoulaisSrc,
-		imageAlt: 'Corentin Coulais, Co-Founder and Chief Scientific Officer of MetaSafe',
+		imageSrc: '/assets/team/Corentin_C12_0783_profile.jpg',
+		imageAlt: 'Corentin Coulais, Co-Founder and Chief Scientific Officer of VYTL Works BV',
 	},
 ] as const satisfies LeadershipCardProps[];
 
@@ -45,10 +45,10 @@ export const TEAM_MEMBERS = [
 		name: 'Bernard',
 		role: 'Co-Founder & CEO',
 		description:
-			"Leading MetaSafe's vision of bringing metamaterials out of the lab and into the real world.",
+			"Leading VYTL Works BV's vision of bringing metamaterials out of the lab and into the real world.",
 		social: {
 			linkedin: 'https://www.linkedin.com/in/ennisbl/',
-			mailto: 'mailto:bernard.ennis@metamaterialworks.com',
+			mailto: 'mailto:bernard@vytl.works',
 		},
 	},
 	{
