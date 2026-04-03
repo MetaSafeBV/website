@@ -24,21 +24,23 @@ function sidebar(): DefaultTheme.SidebarItem[] {
 	return [...mainItems, ...newsItems];
 }
 
-export const en: LocaleSpecificConfig<DefaultTheme.Config> = {
-	title: 'VYTL Works',
-	description: 'VYTL Works BV - Advanced Protection Solutions',
-	themeConfig: {
-		logoLink: '/en/',
-		sidebar: sidebar(),
-		docFooter: {
-			prev: 'Previous page',
-			next: 'Next page',
+export function createEnLocale(): LocaleSpecificConfig<DefaultTheme.Config> {
+	return {
+		title: 'VYTL Works',
+		description: 'VYTL Works BV - Advanced Protection Solutions',
+		themeConfig: {
+			logoLink: '/en/',
+			sidebar: sidebar(),
+			docFooter: {
+				prev: 'Previous page',
+				next: 'Next page',
+			},
+			outline: {
+				label: 'On this page',
+			},
+			lastUpdated: {
+				text: 'Last updated',
+			},
 		},
-		outline: {
-			label: 'On this page',
-		},
-		lastUpdated: {
-			text: 'Last updated',
-		},
-	},
-};
+	};
+}
