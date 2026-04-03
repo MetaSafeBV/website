@@ -105,6 +105,8 @@ import { SupportedLocales } from '~vitepress/theme';
 import logoSrc from '~/assets/branding/VYTL_logo_red.png';
 import videoSrc from '~/assets/video/AMSIA.mp4';
 import HomeSection from './home-section.vue';
+import logoSrc from '~/public/assets/branding/MetaSafe_logo_3.2.png';
+import videoSrc from '~/public/assets/video/AMSIA.mp4';
 
 const props = withDefaults(defineProps<HomePageContentProps>(), {
 	locale: () => SupportedLocales.EN,

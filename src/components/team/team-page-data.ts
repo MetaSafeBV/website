@@ -1,5 +1,9 @@
 import { type LeadershipCardProps } from '~/components/team/leadership-card';
 
+import BernardEnnisSrc from '~/public/assets/team/Bernard_C12_0740_head.jpg';
+import CorentinCoulaisSrc from '~/public/assets/team/Corentin_C12_0783_profile.jpg';
+import SpyrosFyllaridisSrc from '~/public/assets/team/Spyros_head.jpg';
+
 export interface TeamMemberCardProps {
 	imageSrc: string;
 	imageAlt: string;
@@ -36,7 +40,7 @@ export const LEADERSHIP_MEMBERS = [
 
 export const TEAM_MEMBERS = [
 	{
-		imageSrc: '/assets/team/Bernard_C12_0740_head.jpg',
+		imageSrc: BernardEnnisSrc,
 		imageAlt: 'Bernard Ennis, Co-Founder and CEO',
 		name: 'Bernard',
 		role: 'Co-Founder & CEO',
@@ -48,7 +52,7 @@ export const TEAM_MEMBERS = [
 		},
 	},
 	{
-		imageSrc: '/assets/team/Corentin_C12_0783_profile.jpg',
+		imageSrc: CorentinCoulaisSrc,
 		imageAlt: 'Corentin Coulais, Co-Founder and Chief Scientific Officer',
 		name: 'Corentin',
 		role: 'Co-Founder & CSO',
@@ -61,7 +65,7 @@ export const TEAM_MEMBERS = [
 		},
 	},
 	{
-		imageSrc: '/assets/team/Spyros_head.jpg',
+		imageSrc: SpyrosFyllaridisSrc,
 		imageAlt: 'Spyros Fyllaridis, Mechanical Engineer',
 		name: 'Spyros',
 		role: 'Mechanical Engineer',

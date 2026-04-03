@@ -1,9 +1,8 @@
 export interface NewsItemProps {
 	title: string;
-	description?: string;
+	description: string;
 	createdAt: string;
-	imageSrc: string;
-	imgAlt: string;
+	imgPath: string;
 	link: string;
 	creationDate: string;
 }
