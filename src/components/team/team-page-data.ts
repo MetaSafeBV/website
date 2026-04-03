@@ -48,7 +48,7 @@ export const TEAM_MEMBERS = [
 			"Leading VYTL Works BV's vision of bringing metamaterials out of the lab and into the real world.",
 		social: {
 			linkedin: 'https://www.linkedin.com/in/ennisbl/',
-			mailto: 'mailto:bernard.ennis@metamaterialworks.com',
+			mailto: 'mailto:bernard@vytl.works',
 		},
 	},
 	{

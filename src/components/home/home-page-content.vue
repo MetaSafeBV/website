@@ -102,11 +102,9 @@ import { constructLocaleWithLocaleSegment } from '~/utils/path-helper';
 import LeadershipCard from '~/components/team/leadership-card.vue';
 import { SupportedLocales } from '~vitepress/theme';
 
-import logoSrc from '~/assets/branding/VYTL_logo_red.png';
-import videoSrc from '~/assets/video/AMSIA.mp4';
-import HomeSection from './home-section.vue';
 import logoSrc from '~/public/assets/branding/VYTL_logo_red.png';
 import videoSrc from '~/public/assets/video/AMSIA.mp4';
+import HomeSection from './home-section.vue';
 
 const props = withDefaults(defineProps<HomePageContentProps>(), {
 	locale: () => SupportedLocales.EN,
@@ -172,7 +170,7 @@ const props = withDefaults(defineProps<HomePageContentProps>(), {
 }
 
 .hero-logo {
-	width: clamp(280px, 40vw, 480px);
+	width: clamp(480px, 65vw, 800px);
 	height: auto;
 }
 
