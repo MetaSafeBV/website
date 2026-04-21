@@ -6,6 +6,9 @@ on:
       - main
       - dev
 
+permissions:
+  contents: read
+
 concurrency:
   cancel-in-progress: true
   group: ${{ github.workflow }}-${{ github.ref }}
