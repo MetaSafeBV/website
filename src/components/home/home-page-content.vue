@@ -106,7 +106,7 @@ import LeadershipCard from '~/components/team/leadership-card.vue';
 import { SupportedLocales } from '~vitepress/theme';
 
 import logoSrc from '~/public/assets/branding/VYTL_logo_red.png';
-import videoSrc from '~/public/assets/video/AMSIA.mp4';
+import videoSrc from '~/public/assets/video/VYTL Works_battery_box_protection.mp4';
 import HomeSection from './home-section.vue';
 
 const props = withDefaults(defineProps<HomePageContentProps>(), {
