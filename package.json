@@ -36,7 +36,7 @@
 		"oxfmt": "^0.45.0",
 		"oxlint": "^1.61.0",
 		"tsx": "^4.21.0",
-		"typescript": "^6.0.2",
+		"typescript": "^6.0.3",
 		"vitepress": "2.0.0-alpha.17",
 		"vue": "^3.5.32"
 	},
